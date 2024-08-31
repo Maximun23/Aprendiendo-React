@@ -1,18 +1,29 @@
+import '../src/App.css'
+import { XFollowCard } from './XFollowCard'
+
 export function App () {
     return (
-        <article>
-            <header>
-                <img alt="El avatar de midudev" src="https://unavatar.io/maximun12231" />
-                <div>
-                    <strong>Maximun1223YT</strong>
-                    <span>@maximun12231</span>
-                </div>
-            </header>
-            <aside>
-                <button>
-                    Seguir
-                </button>
-            </aside>
-        </article>
+        <section className='container'>
+            <XFollowCard
+            isFollowing
+            userName={"midudev"}
+            name={"Miguel Ángel Durán"} />
+
+            <XFollowCard
+            isFollowing={false}
+            userName={"Maximun12231"} name={"Maximun1223YT"} />
+
+            <XFollowCard
+            isFollowing
+            userName={"NASA"} name={"NASA"} />
+
+            <XFollowCard
+            isFollowing
+            userName={"Google"} name={"Google"} />
+
+            <XFollowCard    
+            isFollowing
+            userName={"daviardev"} name={"daviardev"} />
+        </section>
     )
 }
