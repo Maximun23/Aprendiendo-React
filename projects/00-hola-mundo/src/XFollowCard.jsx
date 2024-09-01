@@ -26,11 +26,10 @@ export function XFollowCard ({ children, userName, initialIsFollowing}) {
             </header>
             <aside>
                 <button className={buttonClassname} onClick={handleClick}>
-                    {text}
+                    <span className='x-followCard-text'>{text}</span>
+                    <span className="x-followCard-stopFollow">Dejar de seguir</span>
                 </button>
-                    
             </aside>
-            
         </article>
     )
 }
