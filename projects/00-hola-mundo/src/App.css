@@ -44,12 +44,25 @@
     font-weight: bold;
     cursor: pointer;
     background-color: rgb(239, 243, 244);
+    border: 1px solid #000;
 }
+/* Color original del hover del botón
+.x-followCard-button:hover{
+    background-color: rgb(215, 219, 220);    
+}*/
+.x-followCard-button.is-following {
+    border: 1px solid red;
+}
+
 
 .x-followCard-button:hover{
-    background-color: rgb(215, 219, 220);
+    background-color: #09f;
+        
 }
 
+.x-followCard-button.is-following:hover {
+    background: red;
+}
 
 .x-followCard-inforUserName {
     cursor: pointer;
