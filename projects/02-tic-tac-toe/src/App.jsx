@@ -8,9 +8,7 @@ import { WinnerModal } from "./Components/WinnerModal.jsx"
 import { saveGameToStorage, resetGameStorage } from "./logics/storage/index.js"
 
 function App() {
-  console.log('render')
   const [board, setBoard] = useState(() => {
-    console.log('inicializar estado')
     const boardFromStorage = window.localStorage.getItem('board')
     if (boardFromStorage) return JSON.parse(boardFromStorage) 
     return Array(9).fill(null)
@@ -57,6 +55,7 @@ function App() {
       setWinner(false) // empate
     }
   }
+
 
   return(
     <main className="board">
