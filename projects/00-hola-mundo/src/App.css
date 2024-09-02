@@ -71,6 +71,7 @@
     color: red;
     border: 1px solid red;
     transition: .3s ease all;
+    opacity: 1;
 }
 
 .x-followCard-button.is-following:hover .x-followCard-text {
