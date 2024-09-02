@@ -5,6 +5,7 @@ import { Square } from "./Components/Square.jsx"
 import { TURNS } from "./constants.js"
 import { checkWinnerFrom, checkEndGame } from "./logics/board.js"
 import { WinnerModal } from "./Components/WinnerModal.jsx"
+import { saveGameToStorage, resetGameStorage } from "./logics/storage/index.js"
 
 function App() {
   console.log('render')
@@ -14,7 +15,10 @@ function App() {
     if (boardFromStorage) return JSON.parse(boardFromStorage) 
     return Array(9).fill(null)
   })
-  const[turn, setTurn] = useState(TURNS.X)
+  const[turn, setTurn] = useState(() => {
+    const turnFromStorage = window.localStorage.getItem('turn')
+    return turnFromStorage ?? TURNS.X
+  })
   //null es que no hay ganador, false es que hay un empate
   const [winner, setWinner] = useState(null)
 
@@ -23,6 +27,8 @@ function App() {
     setBoard(Array(9).fill(null))
     setTurn(TURNS.X)
     setWinner(null)
+
+    resetGameStorage()
   }
 
 
@@ -37,9 +43,11 @@ function App() {
     //cambiar el turno
     const newTurn = turn ==  TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
-    // guardar aquí partida
-    window.localStorage.setItem('board', JSON.stringify(newBoard))
-    window.localStorage.setItem('turn', turn)
+    // guardar la partida
+    saveGameToStorage({
+      board: newBoard,
+      turn: newTurn
+    })
     // revisar si hay ganador
     const newWinner = checkWinnerFrom(newBoard)
     if(newWinner) {
@@ -52,7 +60,7 @@ function App() {
 
   return(
     <main className="board">
-      <h1>Tik Tak Toe</h1>
+      <h1>Tik Tac Toe</h1>
       <button onClick={resetGame}>Reset del juego</button>
       <section className="game">
         {
