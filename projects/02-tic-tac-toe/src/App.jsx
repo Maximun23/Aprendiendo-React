@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 
 import { Square } from "./Components/Square.jsx";
@@ -6,7 +6,12 @@ import { TURNS } from "./constants.js";
 import { checkWinnerFrom, checkEndGame } from "./logics/board.js";
 import { WinnerModal } from "./Components/WinnerModal.jsx";
 import { saveGameToStorage, resetGameStorage } from "./logics/storage/index.js";
-import { MusicEffectWin, MusicEffectX, MusicEffectO, MusicEffectDraw } from "./Components/SoundEffects.jsx";
+import {
+  MusicEffectWin,
+  MusicEffectX,
+  MusicEffectO,
+  MusicEffectDraw,
+} from "./Components/SoundEffects.jsx";
 
 function App() {
   const [board, setBoard] = useState(() => {
@@ -24,6 +29,14 @@ function App() {
   const [playOSound, setPlayOSound] = useState(false);
   const [playDrawSound, setPlayDrawSound] = useState(false);
 
+  useEffect(() => {
+    if (playDrawSound) {
+      // Reproduce el sonido de empate
+      const timeout = setTimeout(() => setPlayDrawSound(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [playDrawSound]);
+
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
@@ -31,7 +44,6 @@ function App() {
     setPlayXSound(false); // resetear el estado del sonido de X
     setPlayOSound(false); // resetear el estado del sonido de O
     setPlayDrawSound(false); // resetear el estado del sonido de empate
-    
 
     resetGameStorage();
   };
@@ -58,10 +70,8 @@ function App() {
       confetti();
       setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
-      setWinner(false) // empate
+      setWinner(false); // empate
       setPlayDrawSound(true);
-      setTimeout(() => setPlayDrawSound(false), 1000) // Reiniciar el estado después de reproducir
-      
     }
 
     // Reproducir sonido cuando se coloca una X
@@ -99,6 +109,7 @@ function App() {
       {winner && <MusicEffectWin />}
       <MusicEffectX play={playXSound} />
       <MusicEffectO play={playOSound} />
+      {playDrawSound && <MusicEffectDraw />}
     </main>
   );
 }
