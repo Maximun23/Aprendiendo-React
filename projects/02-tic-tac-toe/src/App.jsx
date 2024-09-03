@@ -6,6 +6,7 @@ import { TURNS } from "./constants.js";
 import { checkWinnerFrom, checkEndGame } from "./logics/board.js";
 import { WinnerModal } from "./Components/WinnerModal.jsx";
 import { saveGameToStorage, resetGameStorage } from "./logics/storage/index.js";
+import { MusicEffectWin, MusicEffectX, MusicEffectO, MusicEffectDraw } from "./Components/SoundEffects.jsx";
 
 function App() {
   const [board, setBoard] = useState(() => {
@@ -19,11 +20,18 @@ function App() {
   });
   //null es que no hay ganador, false es que hay un empate
   const [winner, setWinner] = useState(null);
+  const [playXSound, setPlayXSound] = useState(false);
+  const [playOSound, setPlayOSound] = useState(false);
+  const [playDrawSound, setPlayDrawSound] = useState(false);
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
+    setPlayXSound(false); // resetear el estado del sonido de X
+    setPlayOSound(false); // resetear el estado del sonido de O
+    setPlayDrawSound(false); // resetear el estado del sonido de empate
+    
 
     resetGameStorage();
   };
@@ -50,7 +58,21 @@ function App() {
       confetti();
       setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
-      setWinner(false); // empate
+      setWinner(false) // empate
+      setPlayDrawSound(true);
+      setTimeout(() => setPlayDrawSound(false), 1000) // Reiniciar el estado después de reproducir
+      
+    }
+
+    // Reproducir sonido cuando se coloca una X
+    if (turn === TURNS.X && newBoard[index] === TURNS.X) {
+      setPlayXSound(true);
+      setTimeout(() => setPlayXSound(false), 100); // Reiniciar el estado después de reproducir
+    }
+    // Reproducir sonido cuando se coloca una X
+    if (turn === TURNS.O && newBoard[index] === TURNS.O) {
+      setPlayOSound(true);
+      setTimeout(() => setPlayOSound(false), 100); // Reiniciar el estado después de reproducir
     }
   };
 
@@ -74,6 +96,9 @@ function App() {
       </section>
 
       <WinnerModal resetGame={resetGame} winner={winner} />
+      {winner && <MusicEffectWin />}
+      <MusicEffectX play={playXSound} />
+      <MusicEffectO play={playOSound} />
     </main>
   );
 }
