@@ -65,7 +65,7 @@ a {
 
 .link-container {
   position: relative;
-  display: inline-block;
+  display: grid;
   margin-right: 100px;
 }
 
