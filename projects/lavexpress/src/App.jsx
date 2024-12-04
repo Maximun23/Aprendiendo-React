@@ -37,7 +37,7 @@ function App() {
             id="about-us"
             title="Sobre Nosotros"
             active={activeSection}
-            content="Somos una empresa dedicada a ofrecer los mejores servicios a nuestros clientes."
+            content="Somos una empresa con más de 20 años de experiencia en alquiler de lavadoras."
           />
           <ContentSection
             id="services"
