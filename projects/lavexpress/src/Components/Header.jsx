@@ -3,7 +3,7 @@ const Header = () => {
     <header>
       <a href="#" className="logo">
         <img
-          src="src/assets/images/logo.png"
+          src="/src/assets/images/logo.png"
           alt="logo de la compañia"
           className="logo-img"
         />
