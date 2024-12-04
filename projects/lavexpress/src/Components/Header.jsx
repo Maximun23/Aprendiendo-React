@@ -3,8 +3,8 @@ import logo from '../assets/images/logo.png'
 const Header = () => {
   return (
     <header>
-     
-        <img src={logo} alt="logo de la compañía" clasName="logo-img"/>
+        <a href="">
+        <img src={logo} alt="logo de la compañía" className="logo-img"/>
         <p className="nombre-empresa">Lavexpress</p>
       </a>
       <div className="link-container">
