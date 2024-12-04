@@ -1,4 +1,3 @@
-
 import ServicePlans from './ServicePlans';  // Importa el componente ServicePlans
 
 const ContentSection = ({ id, title, content, active }) => {
