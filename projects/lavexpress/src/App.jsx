@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Header from './Components/Header';
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
