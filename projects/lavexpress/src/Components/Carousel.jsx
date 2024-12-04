@@ -5,7 +5,7 @@ import lavadorablanca from "../assets/images/lavadorablanca.jpg";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [lavadora, lavadorablanca, lavadoragris];
+  const images = [lavadora, lavadora, lavadora];
 
   const moveSlide = (direction) => {
     setCurrentIndex(
