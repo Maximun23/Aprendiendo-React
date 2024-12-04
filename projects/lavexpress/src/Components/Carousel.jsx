@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import lavadora from "../assets/images/lavadora.jpg";
 import lavadoragris from "../assets/images/lavadoragris.png";
 import lavadorablanca from "../assets/images/lavadorablanca.jpg";
@@ -12,6 +12,16 @@ const Carousel = () => {
       (prevIndex) => (prevIndex + direction + images.length) % images.length
     );
   };
+
+  // Mover automáticamente cada 3 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      moveSlide(1); // Mueve la imagen hacia adelante
+    }, 3000); // 3000 ms = 3 segundos
+
+    // Limpiar el intervalo cuando el componente se desmonte
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
     <div className="carousel">
