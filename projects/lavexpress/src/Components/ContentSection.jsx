@@ -1,11 +1,12 @@
-import React from 'react';
-
 const ContentSection = ({ id, title, content, active }) => {
   return (
-    <section className={`content-container ${active === id ? "active" : "hidden"}`} id={id}>
+    <section
+      className={`content-container ${active === id ? "active" : "hidden"}`}
+      id={id}
+    >
       <h2>{title}</h2>
       <p>{content}</p>
-      
+
       {/* Solo mostrar la lista de localidades si la sección está activa */}
       {id === "locations" && active === id && (
         <ul className="locations">

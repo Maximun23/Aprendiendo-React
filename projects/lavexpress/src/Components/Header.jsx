@@ -1,10 +1,12 @@
-import React from 'react';
-
 const Header = () => {
   return (
     <header>
       <a href="#" className="logo">
-      <img src="src/assets/images/logo.png" alt="logo de la compañia" className="logo-img" />
+        <img
+          src="src/assets/images/logo.png"
+          alt="logo de la compañia"
+          className="logo-img"
+        />
         <p className="nombre-empresa">Lavexpress</p>
       </a>
       <div className="link-container">
