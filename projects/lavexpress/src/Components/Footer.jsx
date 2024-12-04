@@ -1,10 +1,12 @@
+import logo from '../assets/images/logo.png'; // Ajusta la ruta según tu estructura
+
 const Footer = () => {
   return (
     <footer className="pie-pagina">
       <div className="logo-pie-pagina">
         <img
-          src="src/assets/images/logo.png"
-          alt="logo de la compañia"
+          src={logo}
+          alt="logo de la compañía"
           className="logo-img"
         />
       </div>
@@ -19,5 +21,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
