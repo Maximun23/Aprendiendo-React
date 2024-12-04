@@ -1,10 +1,11 @@
 import React from 'react';
+import logo from '../assets/images/logo.png'
 
 const Footer = () => {
   return (
     <footer className="pie-pagina">
       <div className="logo-pie-pagina">
-        <img src="/assets/images/logo.png" alt="logo de la compañia" className="logo-img" />
+        <img src="src/assets/images/logo.png" alt="logo de la compañia" className="logo-img" />
       </div>
       <div className="caja-red-social">
         <div className="red-social">

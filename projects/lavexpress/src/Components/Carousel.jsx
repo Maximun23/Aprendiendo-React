@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import lavadora from '../assets/images/lavadora.jpg'
+import lavadoragris from '../assets/images/lavadoragris.png'
+import lavadorablanca from '../assets/images/lavadorablanca.jpg'
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    "assets/images/lavadora.jpg",
-    "/assets/images/lavadorablanca.jpg",
-    "/assets/images/lavadoragris.png"
+    lavadora,
+    lavadorablanca,
+    lavadoragris
   ];
 
   const moveSlide = (direction) => {

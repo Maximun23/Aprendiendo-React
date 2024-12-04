@@ -378,12 +378,14 @@ a {
 }
 
 .content-container h2 {
+  color: #000;
   text-align: center;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .content-container ul {
+  color: #000;
   list-style-type: none; /* Elimina los puntos o marcadores */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -392,10 +394,12 @@ a {
 }
 
 .content-container ul li {
+  color: #000;
   margin: 5px 0;
 }
 
 .content-container p {
+  color: #000;
     text-align: center;
 }
 
