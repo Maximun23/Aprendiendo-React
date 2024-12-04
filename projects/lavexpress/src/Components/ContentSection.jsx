@@ -1,3 +1,5 @@
+import ServicePlans from './ServicePlans';
+
 const ContentSection = ({ id, title, content, active }) => {
   return (
     <section
@@ -6,6 +8,8 @@ const ContentSection = ({ id, title, content, active }) => {
     >
       <h2>{title}</h2>
       <p>{content}</p>
+
+      {id === "services" && activate === id && (<ServicePlans />)}
 
       {/* Solo mostrar la lista de localidades si la sección está activa */}
       {id === "locations" && active === id && (
