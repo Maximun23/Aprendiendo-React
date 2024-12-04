@@ -233,6 +233,7 @@ a {
 /* Móviles pequeños (hasta 480px) */
 @media (max-width: 480px) {
   header {
+width: 100%;
     flex-direction: column;
     font-size: 30px;
     padding: 10px;
@@ -433,6 +434,7 @@ a {
 }
 
 .service-plan {
+  color: #000;
   border: 1px solid #ccc;
   border-radius: 10px;
   text-align: center;
