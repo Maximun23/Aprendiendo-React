@@ -487,10 +487,6 @@ width: 100%;
     grid-template-columns: 1fr; /* Una sola columna */
   }
 
-  .service-plan {
-    min-width: 90%;
-    aspect-ratio: auto;
-  }
 
   .tab-button {
     font-size: 14px;
