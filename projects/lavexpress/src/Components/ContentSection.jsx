@@ -10,10 +10,9 @@ const ContentSection = ({ id, title, content, active }) => {
       <h2>{title}</h2>
       <p>{content}</p>
 
-      {/* Solo mostrar la lista de servicios si la sección está activa */}
-      {id === "services" && active === id && (
-        <ServicePlans />  {/* Aquí se inserta el componente de planes de servicio */}
-      )}
+      { id === "services" && active === id && (
+  <ServicePlans />  // Aquí se inserta el componente de planes de servicio
+)}
 
       {/* Solo mostrar la lista de localidades si la sección está activa */}
       {id === "locations" && active === id && (
