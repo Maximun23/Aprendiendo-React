@@ -54,3 +54,63 @@ header {
     text-decoration: none;
     color: #fff;
   }
+
+
+/* Para dispositivos móviles pequeños (menos de 576px) */
+@media (max-width: 576px) {
+  /* Estilos específicos para pantallas pequeñas */
+}
+
+/* Para dispositivos móviles grandes (hasta 768px) */
+@media (max-width: 768px) {
+  header {
+    font-size: 30px; /* Reducir el tamaño de la fuente */
+    padding: 8px; /* Reducir el padding */
+  }
+
+  .header-left {
+    gap: 10px; /* Reducir el espacio entre los elementos */
+  }
+
+  .logo-img {
+    max-height: 60px; /* Reducir el tamaño máximo de la imagen */
+  }
+
+  .logo-img:hover {
+    transform: scale(1.1); /* Reducir la escala al hacer hover */
+  }
+
+  nav {
+    gap: 10px; /* Reducir el espacio entre los elementos */
+    margin-right: 10px; /* Reducir el margen derecho */
+  }
+
+  .nombre-empresa {
+    font-size: 40px; /* Reducir el tamaño de la fuente */
+    max-height: 50px; /* Reducir el tamaño máximo */
+  }
+
+  .nombre-empresa:hover {
+    transform: scale(1.05); /* Reducir la escala al hacer hover */
+  }
+}
+
+/* Para pantallas de tabletas (hasta 992px) */
+@media (max-width: 992px) {
+  /* Estilos específicos para tabletas */
+}
+
+/* Para pantallas de escritorios pequeños (hasta 1200px) */
+@media (max-width: 1200px) {
+  /* Estilos específicos para escritorios pequeños */
+}
+
+/* Para pantallas grandes (más de 1200px) */
+@media (max-width: 1400px) {
+  /* Estilos específicos para pantallas grandes */
+}
+
+/* Para pantallas muy grandes (más de 1400px) */
+@media (max-width: 1600px) {
+  /* Estilos específicos para pantallas muy grandes */
+}
