@@ -158,159 +158,237 @@
   }
 
 
+@media (max-width: 768px){
+/* Estilos generales para el contenedor principal */
+.container-all {
+  background-color: #fff;
+  width: 100%; /* Ancho completo */
+  max-width: 950px; /* Limita el tamaño máximo */
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Contenedor de botones de navegación */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Estilo de los botones de la pestaña */
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+  max-width: 300px;
+}
+
+.tab-button.active {
+  background-color: #004c6d;
+  color: #fff;
+}
+
+.tab-button:hover {
+  background-color: #007fa3;
+  color: #fff;
+}
+
+/* Contenedor de contenido, inicialmente oculto */
+.content-container {
+  display: none;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Títulos y párrafos dentro de los contenedores de contenido */
+.content-container h2 {
+  color: #000;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.content-container ul {
+  color: #000;
+  list-style-type: none; /* Elimina los puntos */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  justify-items: center;
+}
+
+.content-container ul li {
+  color: #000;
+  margin: 5px 0;
+}
+
+.content-container p {
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Planes de servicio */
+.service-plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+  gap: 20px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.service-plans select {
+  width: 90%;
+  max-width: 120px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-radius: 25px;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.service-plans button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #000;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 120px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.service-plans button:hover {
+  background-color: #3f3f3f;
+}
+
+.service-plan {
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding: 30px 20px;
+  max-width: 100%;
+  min-width: 280px;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Contenedor oculto de contenido */
+.hidden {
+  display: none;
+}
+
+.content-container.active {
+  display: block;
+}
+
+/* Botones de navegación */
+.nav-buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-buttons button {
+  width: 90%; /* Hace que los botones ocupen todo el ancho */
+  max-width: 300px;
+  min-width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #70b1c7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #5a94aa;
+}
+
+.nav-buttons button.active {
+  background-color: #004c6d; /* Color del botón activo */
+  color: #fff;
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles) */
 @media (max-width: 768px) {
-  /* Estilos para el scroll horizontal en los planes de servicio */
+  /* Ajusta el contenedor principal */
+  .container-all {
+    padding: 15px;
+  }
+
+  /* Rediseña los planes de servicio para móviles */
   .service-plans {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    scroll-snap-type: x mandatory;
-    width: 100%; /* Asegura que el scroll no se desborde */
-    box-sizing: border-box; /* Evita que el scroll se desborde */
-    padding-bottom: 10px; /* Para añadir espacio debajo del scroll */
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 15px;
+    padding: 10px;
   }
 
   .service-plan {
-    min-width: 80%;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-    box-sizing: border-box; /* Asegura que los elementos no se desborden */
-  }
-
-  /* Estilos generales para la página */
-  .container-all {
-    width: 100%;
     padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .tab-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    margin: 0 auto;
-  }
-
-  .content-container {
-    padding: 10px;
-    margin: 10px auto;
-    width: 100%;
-    max-width: 950px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Ocultar h2 y p por defecto */
-  .content-container h2,
-  .content-container p {
-    display: none;
+    min-width: 240px; /* Asegura que el contenido se ajuste */
+    aspect-ratio: 3/4; /* Cambia la proporción para móviles */
   }
 
   .service-plans select {
-    width: 80px;
-    margin: 0 auto;
+    width: 100%; /* Ancho completo en móviles */
+    margin-top: 10px;
   }
 
   .service-plans button {
-    width: 80px;
-    padding: 8px;
-    margin: 10px auto;
+    width: 100%; /* Ancho completo en móviles */
+    margin-top: 20px;
   }
 
-  .service-plan {
-    padding: 20px 10px;
-    font-size: 14px;
-    min-width: 240px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  /* Ajustar la alineación de los botones */
-  .nav-buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 15px;
-    align-items: center;
-    padding-top: 20px;
-    justify-items: center;
-    width: 100%;
-  }
-
+  /* Asegura que los botones de navegación no se desborden */
   .nav-buttons button {
-    font-size: 14px;
-    padding: 8px;
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 300px;
   }
 
-  /* Botones de localidades deben estar debajo de los otros botones */
-  .location-dropdown {
-    display: flex;
-    flex-direction: column; /* Pone las localidades debajo */
-    width: 100%;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 10px;
-    z-index: 1; /* Para asegurarse de que se desplieguen encima de otros elementos */
+  /* Botones de pestaña */
+  .tab-button {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 300px;
   }
 
-  /* Asegura que el botón "Sobre Nosotros" esté alineado correctamente */
-  .nav-buttons button:nth-child(1) {
-    align-self: center;
+  /* Ajustes adicionales */
+  .content-container ul {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en móviles */
+    gap: 10px;
   }
 
-  .nav-buttons button:nth-child(2),
-  .nav-buttons button:nth-child(3) {
-    align-self: flex-start;
+  /* Ajustes para los botones de la pestaña */
+  .button-container {
+    flex-direction: column;
+    align-items: center;
   }
-
-  /* Ajustes a la lista de localidades */
-  .location-dropdown ul {
-    display: block; /* Hacer que las localidades se muestren en bloque */
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .location-dropdown li {
-    background-color: #f0f0f0;
-    padding: 8px;
-    margin: 2px 0;
-    border-radius: 5px;
-  }
-
-  /* Evitar que el scroll horizontal se desborde y facilitar el scroll completo */
-  .service-plans {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    width: 100%; /* Evitar el desbordamiento */
-    box-sizing: border-box;
-  }
-  
-  .service-plans::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .service-plans::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-
-  .service-plans::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
+}
 }
