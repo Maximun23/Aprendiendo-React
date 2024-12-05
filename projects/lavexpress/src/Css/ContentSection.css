@@ -116,21 +116,6 @@
   }
   
   
-  /* Para dispositivos móviles: scroll horizontal */
-  @media (max-width: 768px) {
-    .service-plans {
-      display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      scroll-snap-type: x mandatory;
-    }
-  
-    .service-plan {
-      min-width: 80%;
-      flex-shrink: 0;
-      scroll-snap-align: center;
-    }
-  }
   
   .hidden {
     display: none;
@@ -173,8 +158,22 @@
   }
 
 
-
 @media (max-width: 768px) {
+  /* Estilos para el scroll horizontal en los planes de servicio */
+  .service-plans {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .service-plan {
+    min-width: 80%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  /* Estilos generales para la página */
   .container-all {
     width: 100%; /* Hacer el contenedor más flexible */
     padding: 20px; /* Añadir espacio interno */
@@ -223,7 +222,6 @@
     text-align: center; /* Centrar el texto */
   }
 
-
   .service-plans select {
     width: 80px; /* Reducir el tamaño del select */
     margin: 0 auto; /* Centrar el select */
@@ -246,10 +244,12 @@
   }
 
   .nav-buttons {
-    flex-direction: column; /* Cambiar los botones a columna */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos botones por fila */
     gap: 15px; /* Reducir el espacio entre los botones */
     align-items: center; /* Centrar los botones */
     padding-top: 20px;
+    justify-items: center; /* Centrar los botones dentro de cada celda */
   }
 
   .nav-buttons button {
