@@ -223,10 +223,6 @@
     text-align: center; /* Centrar el texto */
   }
 
-  .service-plans {
-    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
-    justify-items: center; /* Centrar los elementos del grid */
-  }
 
   .service-plans select {
     width: 80px; /* Reducir el tamaño del select */
