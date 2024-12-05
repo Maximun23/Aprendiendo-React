@@ -165,7 +165,8 @@
     overflow-x: auto;
     gap: 10px;
     scroll-snap-type: x mandatory;
-    max-width: 100%; /* Evitar que se desborde horizontalmente */
+    width: 100%; /* Asegura que el scroll no se desborde */
+    box-sizing: border-box; /* Evita que el scroll se desborde */
     padding-bottom: 10px; /* Para añadir espacio debajo del scroll */
   }
 
@@ -173,99 +174,143 @@
     min-width: 80%;
     flex-shrink: 0;
     scroll-snap-align: center;
+    box-sizing: border-box; /* Asegura que los elementos no se desborden */
   }
 
   /* Estilos generales para la página */
   .container-all {
-    width: 100%; /* Hacer el contenedor más flexible */
-    padding: 20px; /* Añadir espacio interno */
-    border-radius: 15px; /* Reducir el radio de las esquinas */
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
     display: flex;
-    justify-content: center; /* Centrar el contenedor */
-    align-items: center; /* Alinear el contenido al centro */
-    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .button-container {
-    flex-direction: column; /* Colocar los botones en columna */
-    gap: 10px; /* Reducir el espacio entre los botones */
-    align-items: center; /* Centrar los botones horizontalmente */
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
 
   .tab-button {
-    padding: 8px 16px; /* Ajustar el tamaño de los botones */
-    font-size: 14px; /* Reducir el tamaño de la fuente */
-    margin: 0 auto; /* Centrar el botón */
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 0 auto;
   }
 
   .content-container {
-    padding: 10px; /* Reducir el padding */
-    margin: 10px auto; /* Reducir el margen y centrar el contenedor */
-    width: 100%; /* Hacer que ocupe todo el ancho disponible */
-    max-width: 950px; /* Limitar el ancho máximo */
+    padding: 10px;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 950px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar el contenido */
+    align-items: center;
   }
 
   /* Ocultar h2 y p por defecto */
   .content-container h2,
   .content-container p {
-    display: none; /* Ocultar los elementos */
+    display: none;
   }
 
   .service-plans select {
-    width: 80px; /* Reducir el tamaño del select */
-    margin: 0 auto; /* Centrar el select */
+    width: 80px;
+    margin: 0 auto;
   }
 
   .service-plans button {
-    width: 80px; /* Reducir el tamaño del botón */
-    padding: 8px; /* Reducir el padding */
-    margin: 10px auto; /* Centrar el botón */
+    width: 80px;
+    padding: 8px;
+    margin: 10px auto;
   }
 
   .service-plan {
-    padding: 20px 10px; /* Reducir el padding */
-    font-size: 14px; /* Reducir el tamaño del texto */
-    min-width: 240px; /* Reducir el tamaño mínimo */
-    text-align: center; /* Centrar el texto */
+    padding: 20px 10px;
+    font-size: 14px;
+    min-width: 240px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
+  /* Ajustar la alineación de los botones */
   .nav-buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos botones por fila */
-    gap: 15px; /* Reducir el espacio entre los botones */
-    align-items: center; /* Centrar los botones */
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    align-items: center;
     padding-top: 20px;
-    justify-items: center; /* Centrar los botones dentro de cada celda */
+    justify-items: center;
+    width: 100%;
   }
 
   .nav-buttons button {
-    font-size: 14px; /* Reducir el tamaño de la fuente */
-    padding: 8px; /* Reducir el padding */
-    width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
-    max-width: 200px; /* Limitar el tamaño máximo */
-    margin: 0 auto; /* Asegura que todos los botones estén alineados */
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
   }
 
-  /* Asegurar que el botón 'Sobre Nosotros' esté alineado correctamente */
+  /* Botones de localidades deben estar debajo de los otros botones */
+  .location-dropdown {
+    display: flex;
+    flex-direction: column; /* Pone las localidades debajo */
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    z-index: 1; /* Para asegurarse de que se desplieguen encima de otros elementos */
+  }
+
+  /* Asegura que el botón "Sobre Nosotros" esté alineado correctamente */
   .nav-buttons button:nth-child(1) {
-    align-self: center; /* Centra el primer botón */
+    align-self: center;
   }
 
   .nav-buttons button:nth-child(2),
   .nav-buttons button:nth-child(3) {
-    align-self: flex-start; /* Alinea los otros botones al inicio */
+    align-self: flex-start;
   }
 
-  /* Asegurarse de que el contenedor de texto no se desborde */
-  .content-container ul {
-    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
-    text-align: center; /* Centrar los elementos de la lista */
-    justify-content: center; /* Centrar los elementos dentro del grid */
+  /* Ajustes a la lista de localidades */
+  .location-dropdown ul {
+    display: block; /* Hacer que las localidades se muestren en bloque */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .location-dropdown li {
+    background-color: #f0f0f0;
+    padding: 8px;
+    margin: 2px 0;
+    border-radius: 5px;
+  }
+
+  /* Evitar que el scroll horizontal se desborde y facilitar el scroll completo */
+  .service-plans {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%; /* Evitar el desbordamiento */
+    box-sizing: border-box;
+  }
+  
+  .service-plans::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .service-plans::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  .service-plans::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
 }
