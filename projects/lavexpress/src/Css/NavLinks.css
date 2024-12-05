@@ -100,7 +100,7 @@
   /* Contenedor de los links con fondo negro */
   .hover-content {
     display: none; /* Inicialmente oculto */
-    position: fixed;
+    position: fixed; /* Para que ocupe toda la pantalla */
     top: 0;
     left: 0;
     right: 0;
