@@ -13,10 +13,13 @@ const Header = () => {
       <div className="link-container">
         <button className="hover-link">Usuario</button>
         <div className="hover-content">
-          <a href="">Pedidos</a>
-          <a href="prueba.html">Configuración</a>
-          <a href="">Claro|Oscuro</a>
-          <a href="">Cerrar sesión</a>
+         <button className="closeLinks()">x</button>
+
+<ul>
+          <li><a href="">Pedidos</a></li>
+          <li><a href="prueba.html">Configuración</a></li>
+          <li><a href="">Claro|Oscuro</a></li>
+         <li> <a href="">Cerrar sesión</a></li>
         </div>
       </div>
     </header>
