@@ -76,37 +76,56 @@
 
 @media (max-width: 768px) {
   .link-container {
-    margin-right: 30px; /* Ajuste el margen para pantallas pequeñas */
+    margin: 0; /* Eliminar márgenes */
+    padding: 10px; /* Añadir un poco de padding */
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Asegura que los enlaces se distribuyan bien */
     flex-direction: column; /* Cambiar la dirección a columna */
+    background-color: #f4f4f4; /* Fondo de color suave */
+    border-radius: 10px; /* Bordes redondeados */
   }
 
   .hover-link {
-    font-size: 20px; /* Reducir el tamaño de la fuente */
-    padding: 10px 20px; /* Ajustar el padding para mejor visualización */
+    font-size: 18px; /* Reducir el tamaño de la fuente */
+    padding: 12px 25px; /* Ajustar el padding para mejor visualización */
+    text-align: center; /* Alinear el texto al centro */
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+    margin-bottom: 10px; /* Espacio entre los enlaces */
+    background-color: #004c6d; /* Fondo de color para los enlaces */
+    color: #fff; /* Color de texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+  }
+
+  .hover-link:hover {
+    background-color: #007fa3; /* Cambio de color al pasar el ratón */
   }
 
   .hover-content {
     width: 100%;
-    min-width: auto;
-    max-width: 100%;
-    padding: 15px; /* Ajuste el padding para pantallas pequeñas */
-    font-size: 16px; /* Reducir el tamaño de la fuente en el contenido */
-    top: calc(100% + 10px); /* Asegurarse de que haya espacio para el triángulo */
+    padding: 15px;
+    font-size: 16px;
+    top: calc(100% + 10px);
+    background-color: #fff; /* Fondo blanco para el contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 5px; /* Bordes redondeados */
   }
 
   .hover-content a {
     font-size: 18px; /* Reducir el tamaño de fuente de los enlaces */
-    margin-bottom: 8px; /* Ajustar el espacio entre los enlaces */
+    margin-bottom: 10px; /* Ajustar el espacio entre los enlaces */
+    display: block; /* Asegura que los enlaces ocupen toda la línea */
+    color: #004c6d; /* Color del enlace */
+    text-decoration: none; /* Eliminar subrayado */
   }
 
   .hover-content a:hover {
-    font-size: 20px; /* Reducir el tamaño del hover en los enlaces */
+    font-size: 20px; /* Efecto de aumento al pasar el ratón */
+    color: #007fa3; /* Cambiar color al hacer hover */
   }
 
   .link-container:hover .hover-content,
   .hover-content:hover {
-    transform: translateX(-50%) translateY(10px); /* Ajuste de la animación */
+    transform: translateX(0) translateY(10px); /* Ajuste de la animación */
   }
 }
