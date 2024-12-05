@@ -76,56 +76,85 @@
 
 @media (max-width: 768px) {
   .link-container {
-    margin: 0; /* Eliminar márgenes */
-    padding: 10px; /* Añadir un poco de padding */
     display: flex;
-    justify-content: space-between; /* Asegura que los enlaces se distribuyan bien */
-    flex-direction: column; /* Cambiar la dirección a columna */
-    background-color: #f4f4f4; /* Fondo de color suave */
-    border-radius: 10px; /* Bordes redondeados */
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 
   .hover-link {
-    font-size: 18px; /* Reducir el tamaño de la fuente */
-    padding: 12px 25px; /* Ajustar el padding para mejor visualización */
-    text-align: center; /* Alinear el texto al centro */
-    width: 100%; /* Asegurar que ocupe todo el ancho */
-    margin-bottom: 10px; /* Espacio entre los enlaces */
-    background-color: #004c6d; /* Fondo de color para los enlaces */
-    color: #fff; /* Color de texto blanco */
-    border-radius: 5px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de fuente del enlace */
+    padding: 12px 20px; /* Espaciado alrededor del enlace */
+    color: #fff;
+    background-color: #004c6d;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   .hover-link:hover {
-    background-color: #007fa3; /* Cambio de color al pasar el ratón */
+    background-color: #007fa3; /* Color al pasar el ratón */
   }
 
+  /* Contenedor de los links que aparece con fondo negro */
   .hover-content {
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    top: calc(100% + 10px);
-    background-color: #fff; /* Fondo blanco para el contenido */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-radius: 5px; /* Bordes redondeados */
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+    z-index: 1000; /* Asegura que el fondo cubra el resto de la página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hover-content.active {
+    display: flex; /* Mostrar cuando la clase 'active' se añade */
+  }
+
+  /* Lista de enlaces centrada en la pantalla */
+  .hover-content ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Disposición vertical */
+    align-items: center;
+    gap: 15px; /* Espacio entre los enlaces */
+  }
+
+  .hover-content ul li {
+    font-size: 18px;
+    color: #fff;
   }
 
   .hover-content a {
-    font-size: 18px; /* Reducir el tamaño de fuente de los enlaces */
-    margin-bottom: 10px; /* Ajustar el espacio entre los enlaces */
-    display: block; /* Asegura que los enlaces ocupen toda la línea */
-    color: #004c6d; /* Color del enlace */
-    text-decoration: none; /* Eliminar subrayado */
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 
   .hover-content a:hover {
-    font-size: 20px; /* Efecto de aumento al pasar el ratón */
-    color: #007fa3; /* Cambiar color al hacer hover */
+    color: #007fa3; /* Cambia el color al pasar el ratón */
   }
 
-  .link-container:hover .hover-content,
-  .hover-content:hover {
-    transform: translateX(0) translateY(10px); /* Ajuste de la animación */
+  /* Botón para cerrar el contenedor */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #007fa3;
   }
 }
