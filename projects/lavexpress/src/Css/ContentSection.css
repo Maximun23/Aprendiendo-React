@@ -165,6 +165,8 @@
     overflow-x: auto;
     gap: 10px;
     scroll-snap-type: x mandatory;
+    max-width: 100%; /* Evitar que se desborde horizontalmente */
+    padding-bottom: 10px; /* Para añadir espacio debajo del scroll */
   }
 
   .service-plan {
@@ -181,6 +183,7 @@
     display: flex;
     justify-content: center; /* Centrar el contenedor */
     align-items: center; /* Alinear el contenido al centro */
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho */
   }
 
   .button-container {
@@ -205,21 +208,10 @@
     align-items: center; /* Centrar el contenido */
   }
 
-  .content-container h2 {
-    font-size: 18px; /* Reducir el tamaño del título */
-    margin-bottom: 15px; /* Reducir el margen inferior */
-    text-align: center; /* Centrar el texto */
-  }
-
-  .content-container ul {
-    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
-    text-align: center; /* Centrar los elementos de la lista */
-    justify-content: center; /* Centrar los elementos dentro del grid */
-  }
-
+  /* Ocultar h2 y p por defecto */
+  .content-container h2,
   .content-container p {
-    font-size: 14px; /* Reducir el tamaño del texto */
-    text-align: center; /* Centrar el texto */
+    display: none; /* Ocultar los elementos */
   }
 
   .service-plans select {
@@ -257,5 +249,23 @@
     padding: 8px; /* Reducir el padding */
     width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
     max-width: 200px; /* Limitar el tamaño máximo */
+    margin: 0 auto; /* Asegura que todos los botones estén alineados */
+  }
+
+  /* Asegurar que el botón 'Sobre Nosotros' esté alineado correctamente */
+  .nav-buttons button:nth-child(1) {
+    align-self: center; /* Centra el primer botón */
+  }
+
+  .nav-buttons button:nth-child(2),
+  .nav-buttons button:nth-child(3) {
+    align-self: flex-start; /* Alinea los otros botones al inicio */
+  }
+
+  /* Asegurarse de que el contenedor de texto no se desborde */
+  .content-container ul {
+    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
+    text-align: center; /* Centrar los elementos de la lista */
+    justify-content: center; /* Centrar los elementos dentro del grid */
   }
 }
