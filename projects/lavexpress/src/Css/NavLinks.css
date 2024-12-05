@@ -76,7 +76,7 @@
 
 /* Header.css */
 @media (max-width: 768px) {
-  /* Aseguramos que el contenedor de los links siempre esté centrado */
+  /* El contenedor de los links no debe tener margen ni desplazarse */
   .link-container {
     display: flex;
     justify-content: center;
@@ -97,7 +97,7 @@
     background-color: #007fa3;
   }
 
-  /* Contenedor de los links, siempre debe ocupar toda la pantalla */
+  /* Contenedor con fondo negro, que cubra toda la pantalla */
   .hover-content {
     display: none; /* Inicialmente oculto */
     position: fixed; /* Ocupa toda la pantalla */
