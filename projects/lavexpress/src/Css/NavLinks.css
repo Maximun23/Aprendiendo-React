@@ -76,10 +76,10 @@
 
 /* Header.css */
 @media (max-width: 768px) {
+  /* Aseguramos que el contenedor de los links siempre esté centrado */
   .link-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     position: relative;
   }
 
@@ -87,6 +87,7 @@
     font-size: 20px;
     padding: 12px 20px;
     color: #fff;
+    background-color: #004c6d;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -96,26 +97,27 @@
     background-color: #007fa3;
   }
 
-  /* Contenedor de los links con fondo negro */
+  /* Contenedor de los links, siempre debe ocupar toda la pantalla */
   .hover-content {
     display: none; /* Inicialmente oculto */
-    position: fixed; /* Para que ocupe toda la pantalla */
+    position: fixed; /* Ocupa toda la pantalla */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
   .hover-content.active {
-    display: flex; /* Mostrar cuando se activa */
+    display: flex; /* Se muestra cuando está activo */
   }
 
-  /* Lista de enlaces centrada en la pantalla */
+  /* Estilos de la lista de links centrados */
   .hover-content ul {
     list-style-type: none;
     padding: 0;
@@ -141,7 +143,7 @@
     color: #007fa3;
   }
 
-  /* Botón para cerrar el menú */
+  /* Botón de cierre */
   .close-btn {
     position: absolute;
     top: 20px;
