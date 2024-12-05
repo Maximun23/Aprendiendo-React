@@ -1,5 +1,6 @@
 import logo from '../assets/images/logo.png'; // Ajusta la ruta según tu estructura
 
+
 const Footer = () => {
   return (
     <footer className="pie-pagina">

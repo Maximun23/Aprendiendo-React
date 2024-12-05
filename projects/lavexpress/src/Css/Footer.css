@@ -1,0 +1,47 @@
+.pie-pagina {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    flex-wrap: wrap; /* Evita desbordamiento */
+    background-color: #004c6d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 300px; /* Espaciado interno consistente */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  }
+  
+  .logo-pie-pagina {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+  
+  .caja-red-social{
+    background-color: #70b1c7;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    border-radius: 15px;
+  }
+  .red-social {
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .red-social:hover{
+    transform: scale(1.5);
+  }
+  
+  .copyright {
+    position: relative;
+    width: 100%;
+    background-color: rgb(0, 0, 153);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  

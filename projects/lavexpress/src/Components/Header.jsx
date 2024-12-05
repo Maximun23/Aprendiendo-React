@@ -1,12 +1,15 @@
-import logo from '../assets/images/logo.png'
+import logo from "../assets/images/logo.png";
+import "../Css/Header.css";
 
 const Header = () => {
   return (
     <header>
+      <div className="header-left">
         <a href="">
-        <img src={logo} alt="logo de la compañía" className="logo-img"/>
-        <p className="nombre-empresa">Lavexpress</p>
-      </a>
+          <img src={logo} alt="logo de la compañía" className="logo-img" />
+        </a>
+        <h2 className="nombre-empresa">Lavexpress</h2>
+      </div>
       <div className="link-container">
         <button className="hover-link">Usuario</button>
         <div className="hover-content">

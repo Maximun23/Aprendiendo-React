@@ -1,5 +1,9 @@
 import { useState } from "react";
-import "./App.css";
+import "./Css/App.css";
+import "./Css/carousel.css";
+import "./Css/ContentSection.css";
+import "./Css/NavLinks.css";
+import "./Css/Footer.css"
 import Header from "./Components/Header";
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
@@ -59,6 +63,9 @@ function App() {
         </main>
       </div>
       <Footer />
+      <div className="copyright">
+        <span>© 2024 Lavexpress • Todos los derechos reservados</span>
+      </div>
     </div>
   );
 }
