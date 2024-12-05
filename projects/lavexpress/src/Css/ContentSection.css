@@ -391,4 +391,18 @@
     align-items: center;
   }
 }
+
+  .service-plans {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px; /* Asegurarse de que no se desborde por debajo */
+  }
+
+  .service-plan {
+    min-width: 80%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
 }
