@@ -171,3 +171,70 @@
     background-color: #004c6d; /* Color del botón activo */
     color: #fff;
   }
+
+
+
+@media (max-width: 768px) {
+  .container-all {
+    width: 100%; /* Hacer el contenedor más flexible */
+    padding: 20px; /* Añadir espacio interno */
+    border-radius: 15px; /* Reducir el radio de las esquinas */
+  }
+
+  .button-container {
+    flex-direction: column; /* Colocar los botones en columna */
+    gap: 10px; /* Reducir el espacio entre los botones */
+  }
+
+  .tab-button {
+    padding: 8px 16px; /* Ajustar el tamaño de los botones */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .content-container {
+    padding: 10px; /* Reducir el padding */
+    margin: 10px; /* Reducir el margen */
+  }
+
+  .content-container h2 {
+    font-size: 18px; /* Reducir el tamaño del título */
+    margin-bottom: 15px; /* Reducir el margen inferior */
+  }
+
+  .content-container ul {
+    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
+  }
+
+  .content-container p {
+    font-size: 14px; /* Reducir el tamaño del texto */
+  }
+
+  .service-plans {
+    grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
+  }
+
+  .service-plans select {
+    width: 80px; /* Reducir el tamaño del select */
+  }
+
+  .service-plans button {
+    width: 80px; /* Reducir el tamaño del botón */
+    padding: 8px; /* Reducir el padding */
+  }
+
+  .service-plan {
+    padding: 20px 10px; /* Reducir el padding */
+    font-size: 14px; /* Reducir el tamaño del texto */
+    min-width: 240px; /* Reducir el tamaño mínimo */
+  }
+
+  .nav-buttons {
+    flex-direction: column; /* Cambiar los botones a columna */
+    gap: 15px; /* Reducir el espacio entre los botones */
+  }
+
+  .nav-buttons button {
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    padding: 8px; /* Reducir el padding */
+  }
+}
