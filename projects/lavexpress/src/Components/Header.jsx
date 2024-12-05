@@ -3,9 +3,9 @@ import logo from "../assets/images/logo.png";
 import "../Css/Header.css";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false); // Estado para mostrar/ocultar los enlaces
+  const [isActive, setIsActive] = useState(false); // Estado para abrir/cerrar el contenedor
 
-  // Función para mostrar u ocultar el menú
+  // Función para mostrar/ocultar el menú
   const toggleLinks = () => {
     setIsActive(!isActive);
   };
@@ -24,11 +24,14 @@ const Header = () => {
         <h2 className="nombre-empresa">Lavexpress</h2>
       </div>
       <div className="link-container">
+        {/* Al hacer clic en el botón "Usuario", se activa el contenedor de los links */}
         <button className="hover-link" onClick={toggleLinks}>Usuario</button>
         
-        {/* Contenedor con fondo negro que aparece cuando se activa */}
+        {/* El contenedor con fondo negro solo aparece cuando isActive es true */}
         <div className={`hover-content ${isActive ? 'active' : ''}`}>
+          {/* Botón para cerrar */}
           <button className="close-btn" onClick={closeLinks}>×</button>
+          
           <ul>
             <li><a href="">Pedidos</a></li>
             <li><a href="prueba.html">Configuración</a></li>
