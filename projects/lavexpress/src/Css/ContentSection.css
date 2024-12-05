@@ -179,61 +179,87 @@
     width: 100%; /* Hacer el contenedor más flexible */
     padding: 20px; /* Añadir espacio interno */
     border-radius: 15px; /* Reducir el radio de las esquinas */
+    display: flex;
+    justify-content: center; /* Centrar el contenedor */
+    align-items: center; /* Alinear el contenido al centro */
   }
 
+  .button-container {
+    flex-direction: column; /* Colocar los botones en columna */
+    gap: 10px; /* Reducir el espacio entre los botones */
+    align-items: center; /* Centrar los botones horizontalmente */
+  }
 
   .tab-button {
     padding: 8px 16px; /* Ajustar el tamaño de los botones */
     font-size: 14px; /* Reducir el tamaño de la fuente */
+    margin: 0 auto; /* Centrar el botón */
   }
 
   .content-container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 15px;
-    padding: 20px; /* Reducir el padding */
-    margin: 10px; /* Reducir el margen */
+    padding: 10px; /* Reducir el padding */
+    margin: 10px auto; /* Reducir el margen y centrar el contenedor */
+    width: 100%; /* Hacer que ocupe todo el ancho disponible */
+    max-width: 950px; /* Limitar el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido */
   }
 
   .content-container h2 {
     font-size: 18px; /* Reducir el tamaño del título */
     margin-bottom: 15px; /* Reducir el margen inferior */
+    text-align: center; /* Centrar el texto */
   }
 
   .content-container ul {
     grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
-  }3
+    text-align: center; /* Centrar los elementos de la lista */
+    justify-content: center; /* Centrar los elementos dentro del grid */
+  }
 
   .content-container p {
     font-size: 14px; /* Reducir el tamaño del texto */
+    text-align: center; /* Centrar el texto */
   }
 
   .service-plans {
     grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
+    justify-items: center; /* Centrar los elementos del grid */
   }
 
   .service-plans select {
     width: 80px; /* Reducir el tamaño del select */
+    margin: 0 auto; /* Centrar el select */
   }
 
   .service-plans button {
     width: 80px; /* Reducir el tamaño del botón */
     padding: 8px; /* Reducir el padding */
+    margin: 10px auto; /* Centrar el botón */
   }
 
   .service-plan {
     padding: 20px 10px; /* Reducir el padding */
     font-size: 14px; /* Reducir el tamaño del texto */
     min-width: 240px; /* Reducir el tamaño mínimo */
+    text-align: center; /* Centrar el texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .nav-buttons {
     flex-direction: column; /* Cambiar los botones a columna */
     gap: 15px; /* Reducir el espacio entre los botones */
+    align-items: center; /* Centrar los botones */
+    padding-top: 20px;
   }
 
   .nav-buttons button {
     font-size: 14px; /* Reducir el tamaño de la fuente */
     padding: 8px; /* Reducir el padding */
+    width: 100%; /* Hacer que los botones ocupen todo el ancho disponible */
+    max-width: 200px; /* Limitar el tamaño máximo */
   }
 }
