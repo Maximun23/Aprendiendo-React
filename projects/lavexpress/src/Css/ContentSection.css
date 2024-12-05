@@ -181,10 +181,6 @@
     border-radius: 15px; /* Reducir el radio de las esquinas */
   }
 
-  .button-container {
-    flex-direction: column; /* Colocar los botones en columna */
-    gap: 10px; /* Reducir el espacio entre los botones */
-  }
 
   .tab-button {
     padding: 8px 16px; /* Ajustar el tamaño de los botones */
@@ -192,7 +188,10 @@
   }
 
   .content-container {
-    padding: 10px; /* Reducir el padding */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    padding: 20px; /* Reducir el padding */
     margin: 10px; /* Reducir el margen */
   }
 
@@ -203,7 +202,7 @@
 
   .content-container ul {
     grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
-  }
+  }3
 
   .content-container p {
     font-size: 14px; /* Reducir el tamaño del texto */
