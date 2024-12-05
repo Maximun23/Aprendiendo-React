@@ -45,3 +45,33 @@
     font-size: 14px;
   }
   
+
+@media (max-width: 768px) {
+  .pie-pagina {
+    padding: 20px 20px; /* Reducir el padding */
+    flex-direction: column; /* Cambiar la disposición a columna */
+    align-items: center; /* Centrar los elementos */
+    text-align: center; /* Alinear el texto al centro */
+  }
+
+  .logo-pie-pagina {
+    margin-left: 0; /* Eliminar el margen izquierdo */
+    margin-bottom: 10px; /* Añadir espacio abajo */
+  }
+
+  .caja-red-social {
+    margin-right: 0; /* Eliminar el margen derecho */
+    justify-content: center; /* Centrar los íconos de redes sociales */
+    margin-bottom: 10px; /* Añadir espacio abajo */
+  }
+
+  .red-social {
+    font-size: 16px; /* Reducir el tamaño de la fuente */
+    margin: 0 10px; /* Añadir espacio entre los íconos */
+  }
+
+  .copyright {
+    font-size: 12px; /* Reducir el tamaño de la fuente */
+    padding: 8px 0; /* Reducir el padding */
+  }
+}
