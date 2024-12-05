@@ -72,3 +72,41 @@
     color: #fff;
     font-size: 23px;
   }
+
+
+@media (max-width: 768px) {
+  .link-container {
+    margin-right: 30px; /* Ajuste el margen para pantallas pequeñas */
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Cambiar la dirección a columna */
+  }
+
+  .hover-link {
+    font-size: 20px; /* Reducir el tamaño de la fuente */
+    padding: 10px 20px; /* Ajustar el padding para mejor visualización */
+  }
+
+  .hover-content {
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+    padding: 15px; /* Ajuste el padding para pantallas pequeñas */
+    font-size: 16px; /* Reducir el tamaño de la fuente en el contenido */
+    top: calc(100% + 10px); /* Asegurarse de que haya espacio para el triángulo */
+  }
+
+  .hover-content a {
+    font-size: 18px; /* Reducir el tamaño de fuente de los enlaces */
+    margin-bottom: 8px; /* Ajustar el espacio entre los enlaces */
+  }
+
+  .hover-content a:hover {
+    font-size: 20px; /* Reducir el tamaño del hover en los enlaces */
+  }
+
+  .link-container:hover .hover-content,
+  .hover-content:hover {
+    transform: translateX(-50%) translateY(10px); /* Ajuste de la animación */
+  }
+}
