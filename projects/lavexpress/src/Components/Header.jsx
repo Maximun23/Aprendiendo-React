@@ -34,7 +34,7 @@ const Header = () => {
           
           <ul>
             <li><a href="">Pedidos</a></li>
-            <li><a href="prueba.html">Configuración</a></li>
+            <li><a href="prueba.jsx">Configuración</a></li>
             <li><a href="">Claro|Oscuro</a></li>
             <li><a href="">Cerrar sesión</a></li>
           </ul>
