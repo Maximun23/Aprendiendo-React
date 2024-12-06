@@ -1,0 +1,75 @@
+/* Estilos generales */
+.menu-container {
+  position: relative;
+}
+
+.menu-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #004c6d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: #007fa3;
+}
+
+/* Estilos para el fondo negro */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+  display: none; /* Inicialmente oculto */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.menu-overlay.active {
+  display: flex; /* Aparece cuando está activo */
+}
+
+.menu-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.menu-links a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #007fa3;
+}
+
+/* Botón de cierre */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #007fa3;
+}
