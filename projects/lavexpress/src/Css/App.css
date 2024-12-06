@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 body {
@@ -58,3 +59,29 @@ body {
   padding-top: 20px;
 }
 */
+=======
+/* General setup */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Evitar que se mueva la página en móviles */
+  width: 100%; /* Asegurarnos de que ocupa todo el ancho */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+>>>>>>> 802fc47 (ddsd)
