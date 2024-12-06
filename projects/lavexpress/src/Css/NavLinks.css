@@ -74,40 +74,19 @@
   }
 
 
-/* Header.css */
 @media (max-width: 768px) {
-  .link-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-  }
-
-  .hover-link {
-    font-size: 20px;
-    padding: 12px 20px;
-    color: #fff;
-    background-color: #004c6d;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-justify-content: center;
-z-index: 7000;
-  }
-
-  .hover-link:hover {
-    background-color: #007fa3;
-  }
-
-  /* Contenedor con fondo negro, que cubra toda la pantalla */
+  /* Contenedor con fondo negro, que cubre toda la pantalla */
   .hover-content {
-    display: none; /* Inicialmente oculto */
+    display: none;
     position: fixed; /* Ocupa toda la pantalla */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    height: 100%; /* Asegura que ocupe toda la altura */
     background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    z-index: 1000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,10 +95,8 @@ z-index: 7000;
 
   .hover-content.active {
     display: flex; /* Se muestra cuando está activo */
-justify-content: center;
   }
 
-  /* Estilos de la lista de links centrados */
   .hover-content ul {
     list-style-type: none;
     padding: 0;
@@ -128,11 +105,6 @@ justify-content: center;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-  }
-
-  .hover-content ul li {
-    font-size: 18px;
-    color: #fff;
   }
 
   .hover-content a {
@@ -145,7 +117,6 @@ justify-content: center;
     color: #007fa3;
   }
 
-  /* Botón de cierre */
   .close-btn {
     position: absolute;
     top: 20px;
@@ -160,6 +131,5 @@ justify-content: center;
 
   .close-btn:hover {
     color: #007fa3;
-border-radius: 0;
   }
 }
