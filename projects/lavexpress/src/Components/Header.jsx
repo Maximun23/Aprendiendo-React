@@ -44,7 +44,7 @@ const Header = () => {
           onClick={toggleLinks}
           className="hamburger-btn"
         >
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars"></i>a
         </button>
 
         {/* Menú siempre visible al hacer clic, con fondo oscuro solo en móviles */}
