@@ -55,14 +55,7 @@ header {
     color: #fff;
   }
 
-.hamburger-btn {
-  margin-right: 0 auto;
-  background: transparent;
-  border: none;
-  font-size: 24px;  /* Tamaño del ícono */
-  cursor: pointer;
-  text-align: right;
-}
+
 
 
 /* Para dispositivos móviles pequeños (menos de 576px) */
