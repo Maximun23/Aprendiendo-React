@@ -41,7 +41,8 @@ const Header = () => {
         {/* Botón para abrir/cerrar el menú */}
         <button
           className={`hover-link ${isActive && isMobile ? "hidden" : ""}`}
-          onClick={toggleLinks}
+          onClick={toggleLinks}  className="hamburger-btn">
+      <i className="fas fa-bars"></i>
         >
           Usuario
         </button>
