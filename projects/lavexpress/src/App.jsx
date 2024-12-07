@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Css/App.css";
 import "./Css/carousel.css";
 import "./Css/ContentSection.css";
 import "./Css/NavLinks.css";
-import "./Css/Footer.css"
+import "./Css/Footer.css";
 import Header from "./Components/Header";
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
+import Menu from "./Components/Prueba"; // El componente al que rediriges
+import { useState } from "react";
 
 function App() {
   const [activeSection, setActiveSection] = useState("about-us");
@@ -15,9 +17,9 @@ function App() {
   const handleButtonClick = (section) => {
     setActiveSection(section);
   };
-  return (
-    <div className="App">
-      <Header />
+
+  const HomePage = () => (
+    <>
       <Carousel />
       <div className="container-all">
         <div className="nav-buttons">
@@ -34,7 +36,6 @@ function App() {
             Localidades
           </button>
         </div>
-
         <main>
           <ContentSection
             id="about-us"
@@ -62,11 +63,22 @@ function App() {
           />
         </main>
       </div>
-      <Footer />
-      <div className="copyright">
-        <span>© 2024 Lavexpress • Todos los derechos reservados</span>
+    </>
+  );
+
+  return (
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/prueba" element={<Menu />} />
+          {/* Agrega más rutas según sea necesario */}
+        </Routes>
+        <Footer />
+       
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
