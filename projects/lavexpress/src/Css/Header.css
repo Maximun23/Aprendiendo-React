@@ -60,6 +60,7 @@ header {
   border: none;
   font-size: 24px;  /* Tamaño del ícono */
   cursor: pointer;
+  text-align: right;
 }
 
 
