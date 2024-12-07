@@ -8,7 +8,7 @@ import Header from "./Components/Header";
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
-import Menu from "./Components/Prueba"; // El componente al que rediriges
+import Menu from "./Components/Prueba.jsx"; // El componente al que rediriges
 import { useState } from "react";
 
 function App() {
