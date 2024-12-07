@@ -41,8 +41,10 @@ const Header = () => {
         {/* Botón para abrir/cerrar el menú */}
         <button
           className={`hover-link ${isActive && isMobile ? "hidden" : ""}`}
-          onClick={toggleLinks}  className="hamburger-btn">
-      <i className="fas fa-bars"></i>
+          onClick={toggleLinks}
+          className="hamburger-btn"
+        >
+          <i className="fas fa-bars"></i>
         </button>
 
         {/* Menú siempre visible al hacer clic, con fondo oscuro solo en móviles */}
