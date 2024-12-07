@@ -126,6 +126,7 @@
    border-radius: 5px;
    cursor: pointer;
    background-color: green;
+   z-index: 7000;
 }
 
   .hover-link:hover {
