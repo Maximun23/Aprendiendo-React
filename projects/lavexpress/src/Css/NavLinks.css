@@ -125,7 +125,8 @@
   color: red;
    border-radius: 5px;
    cursor: pointer;
-   background-color: green;
+   background-color;
+transition: background-color 0.3s ease;
    z-index: 7000;
 }
 
