@@ -44,7 +44,7 @@ const Header = () => {
           onClick={toggleLinks}
           className="hamburger-btn"
         >
-          <i className="fas fa-bars"></i>a
+          <i className="fas fa-bars"></i>As
         </button>
 
         {/* Menú siempre visible al hacer clic, con fondo oscuro solo en móviles */}
@@ -56,7 +56,7 @@ const Header = () => {
           {/* Botón para cerrar el menú en móviles */}
           {isMobile && isActive && (
             <button className="close-btn" onClick={closeLinks}>
-              ×
+              X
             </button>
           )}
           <Link to="/pedidos" onClick={closeLinks}>
