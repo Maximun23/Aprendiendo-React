@@ -1,7 +1,8 @@
 header {
+    display: flex;
     width: 100%;
     display: flex;
-    background-color: #70b1c7;
+    background-color: #0397AB;
     justify-content: space-between;
     align-items: center;
     font-size: 40px;
@@ -39,13 +40,14 @@ header {
   }
   
   .nombre-empresa {
+    color: #fff;
     cursor: pointer;
     transition: transform 0.3s ease; /* Animación suave */
     font-size: 50px;
     max-height: 60px;
   }
   .nombre-empresa:hover {
-    color: #fff;
+    color: #F0E6D2;
     display: flex;
     transform: scale(1.1);
   }
@@ -58,14 +60,12 @@ header {
 
 
 
-/* Para dispositivos móviles pequeños (menos de 576px) */
-@media (max-width: 576px) {
-  /* Estilos específicos para pantallas pequeñas */
-}
 
 /* Para dispositivos móviles grandes (hasta 768px) */
 @media (max-width: 768px) {
   header {
+    display: flex;
+    gap: 45px;
     font-size: 30px; /* Reducir el tamaño de la fuente */
     padding: 8px; /* Reducir el padding */
   }
@@ -88,6 +88,7 @@ header {
   }
 
   .nombre-empresa {
+    text-align: center;
     font-size: 40px; /* Reducir el tamaño de la fuente */
     max-height: 50px; /* Reducir el tamaño máximo */
   }
@@ -97,22 +98,31 @@ header {
   }
 }
 
-/* Para pantallas de tabletas (hasta 992px) */
-@media (max-width: 992px) {
-  /* Estilos específicos para tabletas */
-}
 
-/* Para pantallas de escritorios pequeños (hasta 1200px) */
-@media (max-width: 1200px) {
-  /* Estilos específicos para escritorios pequeños */
-}
+@media (max-width: 411px) {
+  header {
+    text-align: center;
+    width: 100%;
+    font-size: 20px; /* Ajustar tamaño del texto */
+    padding: 8px; /* Reducir el padding */
+  }
 
-/* Para pantallas grandes (más de 1200px) */
-@media (max-width: 1400px) {
-  /* Estilos específicos para pantallas grandes */
-}
+  .header-left {
+    gap: 10px; /* Reducir espacio entre elementos */
+  }
 
-/* Para pantallas muy grandes (más de 1400px) */
-@media (max-width: 1600px) {
-  /* Estilos específicos para pantallas muy grandes */
+  .logo-img {
+    max-height: 50px; /* Reducir tamaño del logo */
+  }
+
+  .nombre-empresa {
+    font-size: 25px; /* Reducir tamaño del texto */
+    max-height: 45px; /* Ajustar altura máxima */
+  }
+
+ 
+
+  a {
+    font-size: 14px; /* Reducir tamaño de los enlaces */
+  }
 }

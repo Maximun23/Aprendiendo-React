@@ -11,6 +11,14 @@ import Footer from "./Components/Footer";
 import Menu from "./Components/Menu.jsx"; // El componente al que rediriges
 import { useState } from "react";
 
+// Habilitar las banderas de transición y rutas relativas de Splat
+const routerConfig = {
+  future: {
+    v7_startTransition: true, // Habilita las transiciones de estado
+    v7_relativeSplatPath: true, // Cambios en la resolución de rutas relativas en Splat
+  },
+};
+
 function App() {
   const [activeSection, setActiveSection] = useState("about-us");
 
@@ -67,7 +75,7 @@ function App() {
   );
 
   return (
-    <BrowserRouter>
+    <BrowserRouter {...routerConfig}>
       <div className="App">
         <Header />
         <Routes>
@@ -76,7 +84,6 @@ function App() {
           {/* Agrega más rutas según sea necesario */}
         </Routes>
         <Footer />
-       
       </div>
     </BrowserRouter>
   );

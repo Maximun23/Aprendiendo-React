@@ -1,4 +1,15 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+
+// Componente para un plan individual
+const ServicePlan = ({ title, description, price, buttonText, extraInfo }) => (
+  <div className="service-plan">
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+    {price && <p>{price}</p>}
+    {extraInfo && extraInfo.map((info, index) => <p key={index}>{info}</p>)}
+    <button>{buttonText}</button>
+  </div>
+);
 
 const ServicePlans = () => {
   const [customDays, setCustomDays] = useState(3);
@@ -10,35 +21,41 @@ const ServicePlans = () => {
     setCustomPrice(days * 25000); // Precio por día
   };
 
+  const plans = [
+    {
+      title: "Básico",
+      description: "Servicio de 24 horas.",
+      price: "$ 25.000 COP",
+      buttonText: "Seleccionar",
+    },
+    {
+      title: "Medio",
+      description: "Servicio de 48 horas.",
+      price: "$ 50.000 COP",
+      buttonText: "Seleccionar",
+    },
+    {
+      title: "Pro",
+      description: "Servicio de una semana.",
+      price: "$ 145.000 COP",
+      extraInfo: ["¡17% dto!", "¡Ahorras 30.000 COP!"],
+      buttonText: "Seleccionar",
+    },
+  ];
+
   return (
     <div className="service-plans">
-      <div className="service-plan">
-        <h3>Básico</h3>
-        <p>Servicio de 24 horas.</p>
-        <p>$ 25.000 COP</p>
-        <button>Seleccionar</button>
-      </div>
-      <div className="service-plan">
-        <h3>Medio</h3>
-        <p>Servicio de 48 horas.</p>
-        <p>$ 50.000 COP</p>
-        <button>Seleccionar</button>
-      </div>
-      <div className="service-plan">
-        <h3>Pro</h3>
-        <p>¡17% dto!</p>
-        <p>Servicio de una semana.</p>
-        <p>$ 145.000 COP</p>
-        <p>¡Ahorras 30.000 COP!</p>
-        <button>Seleccionar</button>
-      </div>
+      {plans.map((plan, index) => (
+        <ServicePlan key={index} {...plan} />
+      ))}
       <div className="service-plan" id="custom-plan">
         <h3>Personalizado</h3>
         <select id="days-select" value={customDays} onChange={handleCustomDayChange}>
-          <option value="3">3 días</option>
-          <option value="4">4 días</option>
-          <option value="5">5 días</option>
-          <option value="6">6 días</option>
+          {[3, 4, 5, 6].map((day) => (
+            <option key={day} value={day}>
+              {day} días
+            </option>
+          ))}
         </select>
         <div id="custom-price">
           <p>Servicio de <span id="custom-days">{customDays}</span> días.</p>

@@ -39,3 +39,21 @@
 .next {
   right: 0;
 }
+
+@media (max-width: 411px) {
+  .carousel {
+    top: 20px; /* Ajustar el margen superior */
+    max-width: 100%; /* Permitir que ocupe todo el ancho disponible */
+    padding: 0 10px; /* Añadir un poco de espacio interno */
+  }
+
+  .carousel-images img {
+    height: auto; /* Asegurar que las imágenes mantengan proporciones */
+    max-width: 100%; /* Escalar las imágenes adecuadamente */
+  }
+
+  .carousel button {
+    font-size: 1.5em; /* Reducir el tamaño de los botones */
+    padding: 8px; /* Reducir el padding interno */
+  }
+}

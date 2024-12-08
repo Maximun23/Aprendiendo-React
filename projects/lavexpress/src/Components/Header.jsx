@@ -42,9 +42,8 @@ const Header = () => {
         <button
           className={`hover-link ${isActive && isMobile ? "hidden" : ""}`}
           onClick={toggleLinks}
-          className="hamburger-btn"
         >
-          <i className="fas fa-bars"></i>As
+          <i className="fas fa-bars"></i>
         </button>
 
         {/* Menú siempre visible al hacer clic, con fondo oscuro solo en móviles */}
@@ -62,7 +61,7 @@ const Header = () => {
           <Link to="/pedidos" onClick={closeLinks}>
             Pedidos
           </Link>
-          <Link to="/prueba" onClick={closeLinks}>
+          <Link to="/menu" onClick={closeLinks}>
             Configuración
           </Link>
           <Link to="/claro-oscuro" onClick={closeLinks}>

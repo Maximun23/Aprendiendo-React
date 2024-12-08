@@ -1,5 +1,62 @@
 import ServicePlans from './ServicePlans';  // Importa el componente ServicePlans
 
+
+const locations = [
+  "El Prado",
+  "Bellavista",
+  "Riomar",
+  "San Felipe",
+  "Los Andes",
+  "Altamira",
+  "Miramar",
+  "Alameda",
+  "El Valle",
+  "San Isidro",
+  "Los Pinos",
+  "Alameda del Río",
+  "América",
+  "Barlovento",
+  "Barranquillita",
+  "Barrio Abajo",
+  "Betania",
+  "Boston",
+  "Campo Alegre",
+  "Centro",
+  "Ciudad Jardín",
+  "Colombia",
+  "El Boliche",
+  "El Castillo",
+  "El Porvenir",
+  "El Recreo",
+  "El Rosario",
+  "El Tabor",
+  "Granadillo",
+  "Zona Industrial Vía 40",
+  "La Bendición de Dios",
+  "La Campiña",
+  "La Concepción",
+  "La Cumbre",
+  "La Felicidad",
+  "La Loma",
+  "Las Colinas",
+  "Las Delicias",
+  "Las Mercedes",
+  "Los Alpes",
+  "Los Jobos",
+  "Los Nogales",
+  "Modelo",
+  "Montecristo",
+  "Nuevo Horizonte",
+  "Paraíso",
+  "Parque Rosado",
+  "San Francisco",
+  "Santa Ana",
+  "Villa Country",
+  "Villa Tarel",
+  "Villanueva",
+]
+  
+
 const ContentSection = ({ id, title, content, active }) => {
   return (
     <section
@@ -16,59 +73,9 @@ const ContentSection = ({ id, title, content, active }) => {
       {/* Solo mostrar la lista de localidades si la sección está activa */}
       {id === "locations" && active === id && (
         <ul className="locations">
-          <li>El Prado</li>
-            <li>Bellavista</li>
-            <li>Riomar</li>
-            <li>San Felipe</li>
-            <li>Los Andes</li>
-            <li>Altamira</li>
-            <li>Miramar</li>
-            <li>Alameda</li>
-            <li>El Valle</li>
-            <li>San Isidro</li>
-            <li>Los Pinos</li>
-            <li>Alameda del Río</li>
-            <li>América</li>
-            <li>Barlovento</li>
-            <li>Barranquillita</li>
-            <li>Barrio Abajo</li>
-            <li>Betania</li>
-            <li>Boston</li>
-            <li>Campo Alegre</li>
-            <li>Centro</li>
-            <li>Ciudad Jardín</li>
-            <li>Colombia</li>
-            <li>El Boliche</li>
-            <li>El Castillo</li>
-            <li>El Porvenir</li>
-            <li>El Recreo</li>
-            <li>El Rosario</li>
-            <li>El Tabor</li>
-            <li>Granadillo</li>
-            <li>Zona Industrial Vía 40</li>
-            <li>La Bendición de Dios</li>
-            <li>La Campiña</li>
-            <li>La Concepción</li>
-            <li>La Cumbre</li>
-            <li>La Felicidad</li>
-            <li>La Loma</li>
-            <li>Las Colinas</li>
-            <li>Las Delicias</li>
-            <li>Las Mercedes</li>
-            <li>Los Alpes</li>
-            <li>Los Jobos</li>
-            <li>Los Nogales</li>
-            <li>Modelo</li>
-            <li>Montecristo</li>
-            <li>Nuevo Horizonte</li>
-            <li>Paraíso</li>
-            <li>Parque Rosado</li>
-            <li>San Francisco</li>
-            <li>Santa Ana</li>
-            <li>Villa Country</li>
-            <li>Villa Tarel</li>
-            <li>Villanueva</li>
-          {/* Aquí sigue la lista de localidades */}
+          {locations.map((location, index) =>(
+            <li key={index}>{location}</li>
+          ))}
         </ul>
       )}
     </section>

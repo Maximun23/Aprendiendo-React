@@ -1,185 +1,18 @@
 .container-all {
-    background-color: #fff;
-    width: 950px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 25px;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .tab-button {
-    padding: 10px 20px;
-    border: none;
-    color: #000;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .tab-button.active {
-    background-color: #004c6d;
-    color: #fff;
-  }
-  
-  .tab-button:hover {
-    background-color: #007fa3;
-    color: #fff;
-  }
-  
-  .content-container {
-    display: none;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-  }
-  
-  .content-container h2 {
-    color: #000;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
-  
-  .content-container ul {
-    color: #000;
-    list-style-type: none; /* Elimina los puntos o marcadores */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .content-container ul li {
-    color: #000;
-    margin: 5px 0;
-  }
-  
-  .content-container p {
-    color: #000;
-      text-align: center;
-  }
-  
-  .service-plans {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas para computadoras */
-    gap: 20px;
-    justify-items: center; /* Centra los elementos en el eje horizontal */
-  }
-  
-  
-  .service-plans select{
-      display: flex;
-      margin: 0 auto;
-      margin-top: 10px;
-      width: 90px;
-      border-radius: 25px;
-  }
-  .service-plans button{
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      margin-top: 30px;
-      background-color: #000;
-      border-radius: 25px;
-      width: 90px;
-      color: #fff;
-      padding: 10px;
-      cursor: pointer;
-  }
-  
-  .service-plans button:hover{
-      background-color: #3f3f3f;
-  }
-  
-  .service-plan {
-    color: #000;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    padding: 30px 20px; /* Espacio interno equilibrado */
-    max-width: 100%; /* Permite que se adapten al tamaño del grid */
-    min-width: 280px;
-    aspect-ratio: 4/3; /* Mantiene una proporción equilibrada */
-    overflow: hidden; /* Evita que el contenido se desborde */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Espacio entre contenido interno */
-  }
-  
-  
-  
-  .hidden {
-    display: none;
-  }
-  
-  .content-container.active {
-    display: block;
-  }
-  
-  .nav-buttons {
-    margin-top: 80px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-right: auto;
-    padding-top: 20px;
-  }
-  
-  .nav-buttons button {
-    flex: 1 1 calc(50% - 20px); /* Botones ocupan la mitad del ancho con espacio */
-    min-width: 100px;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #70b1c7;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    max-width: 12.5rem;
-  }
-  
-  .nav-buttons button:hover {
-    background-color: #5a94aa;
-  }
-  
-  .nav-buttons button.active {
-    background-color: #004c6d; /* Color del botón activo */
-    color: #fff;
-  }
-
-
-@media (max-width: 768px){
-/* Estilos generales para el contenedor principal */
-.container-all {
   background-color: #fff;
-  width: 100%; /* Ancho completo */
-  max-width: 950px; /* Limita el tamaño máximo */
+  width: 950px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   border-radius: 25px;
-  padding: 20px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
-/* Contenedor de botones de navegación */
 .button-container {
   display: flex;
-  flex-direction: column; /* Alineación vertical */
-  align-items: center;
+  justify-content: center;
   gap: 15px;
-  margin-top: 20px;
 }
 
-/* Estilo de los botones de la pestaña */
 .tab-button {
   padding: 10px 20px;
   border: none;
@@ -188,13 +21,11 @@
   border-radius: 5px;
   font-size: 16px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
-  max-width: 300px;
 }
 
 .tab-button.active {
   background-color: #004c6d;
-  color: #fff;
+  color: red;
 }
 
 .tab-button:hover {
@@ -202,16 +33,13 @@
   color: #fff;
 }
 
-/* Contenedor de contenido, inicialmente oculto */
 .content-container {
   display: none;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px;
   border-radius: 10px;
-  background-color: #f9f9f9;
 }
 
-/* Títulos y párrafos dentro de los contenedores de contenido */
 .content-container h2 {
   color: #000;
   text-align: center;
@@ -221,12 +49,11 @@
 
 .content-container ul {
   color: #000;
-  list-style-type: none; /* Elimina los puntos */
+  list-style-type: none; /* Elimina los puntos o marcadores */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  justify-items: center;
+  justify-content: center;
 }
 
 .content-container ul li {
@@ -237,38 +64,31 @@
 .content-container p {
   color: #000;
   text-align: center;
-  font-size: 14px;
 }
 
-/* Planes de servicio */
 .service-plans {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas para computadoras */
   gap: 20px;
-  justify-items: center;
-  margin-top: 20px;
+  justify-items: center; /* Centra los elementos en el eje horizontal */
+  z-index: 3000;
 }
 
 .service-plans select {
-  width: 90%;
-  max-width: 120px;
+  display: flex;
   margin: 0 auto;
   margin-top: 10px;
+  width: 90px;
   border-radius: 25px;
-  padding: 8px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
 }
-
 .service-plans button {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 30px;
+  display: block;
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+  margin-right: auto;
+  margin-left: auto;
   background-color: #000;
   border-radius: 25px;
-  width: 90%;
-  max-width: 120px;
+  width: 90px;
   color: #fff;
   padding: 10px;
   cursor: pointer;
@@ -279,23 +99,22 @@
 }
 
 .service-plan {
-  color: #000;
+  width: 200px;
+  height: 300px;
+  color: green;
   border: 1px solid #ccc;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  padding: 30px 20px;
-  max-width: 100%;
+  padding-bottom: 30px; /* Espacio interno equilibrado */
+  max-width: 100%; /* Permite que se adapten al tamaño del grid */
   min-width: 280px;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+  overflow: hidden; /* Evita que el contenido se desborde */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-/* Contenedor oculto de contenido */
 .hidden {
   display: none;
 }
@@ -304,93 +123,301 @@
   display: block;
 }
 
-/* Botones de navegación */
 .nav-buttons {
-  margin-top: 40px;
+  margin-top: 80px;
   display: flex;
-  flex-direction: column; /* Alineación vertical */
   gap: 10px;
-  align-items: center;
-  width: 100%;
+  justify-content: center;
+  margin-right: auto;
+  padding-top: 20px;
 }
 
 .nav-buttons button {
-  width: 90%; /* Hace que los botones ocupen todo el ancho */
-  max-width: 300px;
+  flex: 1 1 calc(50% - 20px); /* Botones ocupan la mitad del ancho con espacio */
   min-width: 100px;
   padding: 10px;
   font-size: 16px;
   border: none;
-  background-color: #70b1c7;
+  background-color: #0397ab;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 12.5rem;
 }
 
 .nav-buttons button:hover {
-  background-color: #5a94aa;
+  background-color: #005a82;
 }
 
 .nav-buttons button.active {
-  background-color: #004c6d; /* Color del botón activo */
+  background-color: red; /* Color del botón activo */
   color: #fff;
 }
 
-/* Ajustes para pantallas muy pequeñas (móviles) */
+.nav-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button.active {
+  background-color: #007bff; /* Color fijo cuando está activo */
+  color: white; /* Texto blanco en el botón activo */
+  border-color: #0056b3;
+}
+
+.nav-button:hover {
+  background-color: #e6e6e6; /* Color de hover */
+}
+
+.section-nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
-  /* Ajusta el contenedor principal */
+  /* Estilos generales para el contenedor principal */
   .container-all {
-    padding: 15px;
-  }
-
-  /* Rediseña los planes de servicio para móviles */
-  .service-plans {
-    grid-template-columns: 1fr; /* Una columna */
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .service-plan {
+    background-color: #fff;
+    width: 100%; /* Ancho completo */
+    max-width: 950px; /* Limita el tamaño máximo */
+    margin: 0 auto;
+    border-radius: 25px;
     padding: 20px;
-    min-width: 240px; /* Asegura que el contenido se ajuste */
-    aspect-ratio: 3/4; /* Cambia la proporción para móviles */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
   }
 
-  .service-plans select {
-    width: 100%; /* Ancho completo en móviles */
-    margin-top: 10px;
-  }
-
-  .service-plans button {
-    width: 100%; /* Ancho completo en móviles */
+  /* Contenedor de botones de navegación */
+  .button-container {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    align-items: center;
+    gap: 15px;
     margin-top: 20px;
   }
 
-  /* Asegura que los botones de navegación no se desborden */
-  .nav-buttons button {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 300px;
-  }
-
-  /* Botones de pestaña */
+  /* Estilo de los botones de la pestaña */
   .tab-button {
-    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px 20px;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
     max-width: 300px;
   }
 
-  /* Ajustes adicionales */
-  .content-container ul {
-    grid-template-columns: 1fr 1fr; /* Dos columnas en móviles */
-    gap: 10px;
+  .tab-button.active {
+    background-color: #004c6d;
+    color: #fff;
   }
 
-  /* Ajustes para los botones de la pestaña */
-  .button-container {
-    flex-direction: column;
-    align-items: center;
+  .tab-button:hover {
+    background-color: #007fa3;
+    color: #fff;
   }
-}
+
+  /* Contenedor de contenido, inicialmente oculto */
+  .content-container {
+    display: none;
+    padding: 20px;
+    margin: 20px auto; /* Centra el contenedor horizontalmente */
+    border-radius: 10px;
+    box-sizing: border-box; /* Incluye bordes y padding dentro del ancho/alto */
+    max-width: 950px; /* Limita el ancho al tamaño de tu diseño */
+    overflow: hidden; /* Evita que elementos hijos desborden el contenedor */
+  }
+
+  /* Títulos y párrafos dentro de los contenedores de contenido */
+  .content-container h2 {
+    color: #000;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-container ul {
+    color: #000;
+    list-style-type: none; /* Elimina los puntos */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .content-container ul li {
+    color: #000;
+    margin: 5px 0;
+  }
+
+  .content-container p {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Planes de servicio */
+  .service-plans {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Responsivo */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .service-plans select {
+    width: 90%;
+    max-width: 120px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 25px;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+
+  .service-plans button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #000;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 120px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .service-plans button:hover {
+    background-color: #3f3f3f;
+  }
+
+  .service-plan {
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 30px 20px;
+    max-width: 100%;
+    min-width: 280px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Contenedor oculto de contenido */
+  .hidden {
+    display: none;
+  }
+
+  .content-container.active {
+    display: block;
+  }
+
+  /* Botones de navegación */
+  .nav-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-buttons button {
+    width: 90%; /* Hace que los botones ocupen todo el ancho */
+    max-width: 300px;
+    min-width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #70b1c7;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-buttons button:hover {
+    background-color: #5a94aa;
+  }
+
+  .nav-buttons button.active {
+    background-color: #004c6d; /* Color del botón activo */
+    color: #fff;
+  }
+
+  /* Ajustes para pantallas muy pequeñas (móviles) */
+  @media (max-width: 768px) {
+    /* Ajusta el contenedor principal */
+    .container-all {
+      padding: 15px;
+      box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    }
+
+    /* Rediseña los planes de servicio para móviles */
+    .service-plans {
+      grid-template-columns: 1fr; /* Una columna */
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .service-plan {
+      padding: 20px;
+      min-width: 240px; /* Asegura que el contenido se ajuste */
+      aspect-ratio: 3/4; /* Cambia la proporción para móviles */
+    }
+
+    .service-plans select {
+      width: 100%; /* Ancho completo en móviles */
+      margin-top: 10px;
+    }
+
+    .service-plans button {
+      width: 100%; /* Ancho completo en móviles */
+      margin-top: 20px;
+    }
+
+    /* Asegura que los botones de navegación no se desborden */
+    .nav-buttons button {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      max-width: 300px;
+    }
+
+    /* Botones de pestaña */
+    .tab-button {
+      width: 100%; /* Ocupa todo el ancho disponible */
+      max-width: 300px;
+    }
+
+    /* Ajustes adicionales */
+    .content-container ul {
+      grid-template-columns: 1fr 1fr; /* Dos columnas en móviles */
+      gap: 10px;
+    }
+
+    /* Ajustes para los botones de la pestaña */
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
   .service-plans {
     display: flex;
@@ -404,5 +431,101 @@
     min-width: 80%;
     flex-shrink: 0;
     scroll-snap-align: center;
+  }
+}
+
+@media (max-width: 411px) {
+  .container-all {
+
+    width: 100%; /* Cambia el ancho a 100% para adaptarse a la pantalla */
+    margin: 0 10px; /* Añade un margen pequeño para evitar que el contenido toque los bordes */
+    padding: 10px; /* Reduce el padding para dispositivos pequeños */
+    border-radius: 15px; /* Ajusta el borde redondeado */
+  }
+
+  .button-container {
+    flex-direction: column; /* Los botones se apilan verticalmente */
+    gap: 10px; /* Reduce el espacio entre los botones */
+  }
+
+  .tab-button {
+    font-size: 14px; /* Reduce el tamaño de la fuente para botones */
+    padding: 8px 15px; /* Reduce el padding para botones más compactos */
+  }
+
+  .tab-button.active {
+    background-color: #004c6d;
+    color: red;
+  }
+
+  .tab-button:hover {
+    background-color: #007fa3;
+    color: #fff;
+  }
+
+  .content-container {
+    padding: 10px; /* Reduce el padding en los contenedores de contenido */
+    margin: 10px 0; /* Reduce el margen */
+
+  }
+
+  .content-container h2 {
+    font-size: 18px; /* Ajusta el tamaño del título */
+  }
+
+  .content-container ul {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr); /* Cambia de 3 columnas a 2 para pantallas pequeñas */
+  }
+
+  .content-container ul li {
+    text-align: center;
+    font-size: 14px; /* Reduce el tamaño de los elementos de la lista */
+  }
+
+  .content-container p {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+  }
+
+  .service-plans {
+    grid-template-columns: repeat(2, 1fr); /* Cambia de 3 a 2 columnas en pantallas pequeñas */
+    gap: 10px; /* Reduce el espacio entre los elementos */
+  }
+
+  .service-plans select {
+    width: 70px; /* Reduce el tamaño del select */
+  }
+
+  .service-plans button {
+    width: 80px; /* Reduce el tamaño del botón */
+    padding: 8px;
+  }
+
+  .service-plan {
+    width: 100%; /* Hace que los planes de servicio ocupen todo el ancho disponible */
+    min-width: 0; /* Elimina el ancho mínimo */
+    padding: 10px; /* Ajusta el padding */
+  }
+
+  .nav-buttons {
+    flex-direction: column; /* Los botones de navegación se apilan verticalmente */
+    gap: 10px; /* Reduce el espacio entre los botones */
+  }
+
+  .nav-buttons button {
+    width: 100%; /* Los botones ocupan el 100% del ancho */
+    min-width: 0; /* Elimina el ancho mínimo */
+    padding: 10px;
+    font-size: 14px; /* Reduce el tamaño de la fuente */
+  }
+
+  .nav-button {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    padding: 8px 15px; /* Reduce el padding */
+  }
+
+  .section-nav {
+    flex-direction: column; /* Los botones de navegación de sección se apilan verticalmente */
+    gap: 5px; /* Reduce el espacio entre los botones */
   }
 }

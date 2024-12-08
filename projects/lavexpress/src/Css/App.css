@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 body {
@@ -17,71 +16,3 @@ body {
 
 
 
-/* Dispositivos pequeños (móviles verticales, hasta 480px) */
-@media (max-width: 480px) {
-  .container-all {
-    width: 100%;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 25px;
-    margin-bottom: 20px;
-    margin-top: 60px;
-  }
-
-  .content-container ul {
-    grid-template-columns: 1fr; /* Una sola columna */
-  }
-
-
-  .tab-button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  .nav-buttons button {
-    flex: 1 1 calc(40% - 20px);
-    min-width: 100px;
-    max-width: 150px;
-  }
-}
-
-
-/* 
-.nav-buttons {
-  margin-top: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-right: auto;
-  padding-top: 20px;
-}
-*/
-=======
-/* General setup */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden; /* Evitar que se mueva la página en móviles */
-  width: 100%; /* Asegurarnos de que ocupa todo el ancho */
-}
-
-body {
-  font-family: sans-serif;
-  background-color: #000;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-*::before,
-*::after {
-  box-sizing: inherit;
-}
->>>>>>> 802fc47 (ddsd)

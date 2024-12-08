@@ -2,7 +2,7 @@
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     flex-wrap: wrap; /* Evita desbordamiento */
-    background-color: #004c6d;
+    background-color: #0397AB;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,30 +19,35 @@
   }
   
   .caja-red-social{
-    background-color: #70b1c7;
+    background-color: #005A82;
     padding: 20px;
-    display: flex;
-    justify-content: flex-end;
+    width: 40px;
     margin-right: 50px;
     border-radius: 15px;
   }
   .red-social {
+    text-align: center;
     font-size: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
   }
   .red-social:hover{
     transform: scale(1.5);
+    color: #F0E6D2;
   }
   
   .copyright {
     position: relative;
     width: 100%;
-    background-color: rgb(0, 0, 153);
+    background-color: #0A1428;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     font-size: 14px;
+  }
+
+  .copyright:hover{
+    color: #F0E6D2;
   }
   
 
@@ -73,5 +78,38 @@
   .copyright {
     font-size: 12px; /* Reducir el tamaño de la fuente */
     padding: 8px 0; /* Reducir el padding */
+  }
+}
+
+@media (max-width: 411px) {
+  .pie-pagina {
+    display: flex;
+    flex-direction: column; /* Cambiar a disposición vertical */
+    padding: 20px; /* Padding reducido */
+    text-align: center; /* Centrar contenido en dispositivos pequeños */
+    width: 100vw; /* Ocupa el ancho completo de la pantalla */
+    box-sizing: border-box; /* Asegura que padding no cause overflow */
+    margin: 0; /* Elimina márgenes externos */
+  }
+
+  .logo-pie-pagina {
+    margin-left: 0; /* Quitar margen izquierdo */
+    margin-bottom: 20px; /* Espacio inferior para separación */
+  }
+
+  .caja-red-social {
+    margin: 10px auto; /* Centrar cajas de redes sociales */
+    width: 50px; /* Hacerlas más grandes para pantallas táctiles */
+    padding: 15px; /* Ajustar padding interno */
+  }
+
+  .red-social {
+    font-size: 24px; /* Incrementar tamaño para mejor visibilidad */
+  }
+
+  .copyright {
+    font-size: 12px; /* Reducir el tamaño de la fuente */
+    padding: 10px; /* Espaciado interno más pequeño */
+    margin: 0; /* Elimina márgenes externos */
   }
 }
