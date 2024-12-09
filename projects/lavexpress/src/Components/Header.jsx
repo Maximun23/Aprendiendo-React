@@ -58,6 +58,9 @@ const Header = () => {
               X
             </button>
           )}
+          <Link to="/" onClick={closeLinks}>
+            Inicio
+          </Link>
           <Link to="/pedidos" onClick={closeLinks}>
             Pedidos
           </Link>
