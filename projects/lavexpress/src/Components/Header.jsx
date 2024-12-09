@@ -96,7 +96,7 @@ const Header = () => {
           <Link to="/menu" onClick={closeLinks}>
             Configuración
           </Link>
-          <button onClick={handleToggleDarkMode} className="mode-toggle-btn:hover">
+          <button onClick={handleToggleDarkMode} className="mode-toggle-btn">
             {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
           </button>
         </div>
