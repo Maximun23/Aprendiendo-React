@@ -8,14 +8,15 @@ import Header from "./Components/Header";
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
-import Menu from "./Components/Menu.jsx"; // El componente al que rediriges
+import NotFound from "./Components/NotFound";
+import ServicePlans from "./Components/ServicePlans"; // Importa el componente
+
 import { useState } from "react";
 
-// Habilitar las banderas de transición y rutas relativas de Splat
 const routerConfig = {
   future: {
-    v7_startTransition: true, // Habilita las transiciones de estado
-    v7_relativeSplatPath: true, // Cambios en la resolución de rutas relativas en Splat
+    v7_startTransition: true,
+    v7_relativeSplatPath: true,
   },
 };
 
@@ -31,16 +32,28 @@ function App() {
       <Carousel />
       <div className="container-all">
         <div className="nav-buttons">
-          <button onClick={() => handleButtonClick("about-us")}>
+          <button 
+            onClick={() => handleButtonClick("about-us")}
+            className={activeSection === "about-us" ? "active" : ""}
+          >
             Sobre Nosotros
           </button>
-          <button onClick={() => handleButtonClick("services")}>
+          <button 
+            onClick={() => handleButtonClick("services")}
+            className={activeSection === "services" ? "active" : ""}
+          >
             Servicios
           </button>
-          <button onClick={() => handleButtonClick("contact")}>
+          <button 
+            onClick={() => handleButtonClick("contact")}
+            className={activeSection === "contact" ? "active" : ""}
+          >
             Contáctanos
           </button>
-          <button onClick={() => handleButtonClick("locations")}>
+          <button 
+            onClick={() => handleButtonClick("locations")}
+            className={activeSection === "locations" ? "active" : ""}
+          >
             Localidades
           </button>
         </div>
@@ -80,8 +93,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/menu" element={<Menu />} />
-          {/* Agrega más rutas según sea necesario */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

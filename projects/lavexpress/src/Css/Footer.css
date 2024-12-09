@@ -1,15 +1,31 @@
+/* Asegúrate de que el body y html tengan un 100% de altura */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Hace que el contenedor ocupe toda la altura de la página */
+}
+
+/* Pie de página siempre pegado abajo */
 .pie-pagina {
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    flex-wrap: wrap; /* Evita desbordamiento */
-    background-color: #0397AB;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 300px; /* Espaciado interno consistente */
-    width: 100%; /* Ancho completo */
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
-  }
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  flex-wrap: wrap; /* Evita desbordamiento */
+  background-color: #0397AB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 300px; /* Espaciado interno consistente */
+  width: 100%; /* Ancho completo */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  margin-top: auto; /* Esto empuja el pie de página hacia abajo */
+}
+
+
   
   .logo-pie-pagina {
     display: flex;

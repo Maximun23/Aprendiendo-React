@@ -124,17 +124,17 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    max-width: 100%;
     background-color: #000;
     z-index: 1000;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
-    height: 100vh; /* Asegura que ocupe todo el alto de la pantalla */
+    max-width: 100%;
   }
 
   .hover-content.active {
+    width: 100%;
+    max-width: 100%;
     display: flex;
   }
 
@@ -159,6 +159,8 @@
     color: #007fa3;
     border-radius: 0;
   }
+
+  
 }
 
 @media (max-width: 411px) {
@@ -180,7 +182,7 @@
   }
 
   .hover-content a {
-    font-size: 16px; /* Reducir el tamaño de la fuente de los enlaces */
+    font-size: 40px;
     margin-bottom: 8px; /* Reducir el espacio entre los enlaces */
   }
 

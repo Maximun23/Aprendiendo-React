@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 20px;
   border-radius: 25px;
 }
 
@@ -132,8 +134,9 @@
   padding-top: 20px;
 }
 
+/*Manejo de los colores del botón sección*/
 .nav-buttons button {
-  flex: 1 1 calc(50% - 20px); /* Botones ocupan la mitad del ancho con espacio */
+  flex: 1 1 calc(50% - 20px);
   min-width: 100px;
   padding: 10px;
   font-size: 16px;
@@ -147,38 +150,16 @@
 }
 
 .nav-buttons button:hover {
-  background-color: #005a82;
+  background-color: #005A82;
 }
 
 .nav-buttons button.active {
-  background-color: red; /* Color del botón activo */
-  color: #fff;
-}
-
-.nav-button {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-button.active {
-  background-color: #007bff; /* Color fijo cuando está activo */
+  background-color: #0A323C; /* Color fijo cuando está activo */
   color: white; /* Texto blanco en el botón activo */
   border-color: #0056b3;
 }
 
-.nav-button:hover {
-  background-color: #e6e6e6; /* Color de hover */
-}
 
-.section-nav {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
 @media (max-width: 768px) {
   /* Estilos generales para el contenedor principal */
