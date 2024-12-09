@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isActive, setIsActive] = useState(false); // Estado para abrir/cerrar el menú
   const [isMobile, setIsMobile] = useState(false); // Estado para detectar móvil
+  const [isDarkMode, setIsDarkMode] = useState(false); //Estado para el modo claro|oscuro
 
   // Detectar si es móvil al cargar o al cambiar tamaño de ventana
   useEffect(() => {
@@ -18,6 +19,29 @@ const Header = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Detectar el modo oscuro previamente guardado en localStorage
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "true") {
+      setIsDarkMode(true);
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, []);
+
+  //Función para cambiar entre modo claro y oscuro
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if(isDarkMode) {
+      document.body.classList.remove("dark");
+      localStorage.setItem("darkMode", "false");
+    } else {
+      document.body.classList.add("dark");
+      localStorage.setItem("darkMode", true)
+    }
+  }
 
   // Función para mostrar/ocultar el menú
   const toggleLinks = () => {
@@ -67,9 +91,9 @@ const Header = () => {
           <Link to="/menu" onClick={closeLinks}>
             Configuración
           </Link>
-          <Link to="/claro-oscuro" onClick={closeLinks}>
-            Claro|Oscuro
-          </Link>
+          <button onClick={toggleDarkMode} className="mode-toggle-btn">
+            {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
+          </button>
         </div>
       </div>
     </header>

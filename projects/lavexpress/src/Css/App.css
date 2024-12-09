@@ -1,17 +1,74 @@
-
-
+/* Modo claro (por defecto) */
 body {
   font-family: sans-serif;
-  background-color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
+/* Modo oscuro */
+body.dark {
+  background-color: #000;
+  color: white;
+}
 
+/* Botón de cambio de modo */
+.mode-toggle-btn {
+    margin-right: 0 auto;
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
 
+.mode-toggle-btn:hover {
+  color: #F0E6D2;
+  font-size: 23px;
+}
 
+/* Estilos adicionales para el modo oscuro en otras partes de la página */
+.dark header {
+  background-color: #0A1428;
+}
 
+.dark .link-container {
+  background-color: transparent;
+}
 
+.dark .hover-content {
+  background-color: #222;
+  color: white;
+}
 
+/* Cambia el logo a blanco si es necesario 
+   .dark .logo-img {}*/
 
+.dark .content-section {
+  background-color: #000;
+  color: #fff;
+}
 
+.dark .container-all {
+  background-color: #000;
+}
+.dark .container-all h2 {
+  color: #fff;
+}
 
+.dark .container-all p {
+  color: #fff;
+}
 
+.dark .service-plans button {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark .locations li{
+  color: #fff;
+}
+
+.dark footer{
+  background-color: #0A1428;
+}
