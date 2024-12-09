@@ -28,7 +28,7 @@
   background-color: #005a82;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  padding: 1rem;
+  padding: 0.4rem;
   border-radius: 8px;
 }
 
@@ -40,7 +40,6 @@
   left: 50%;
   background-color: #0397ab;
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 5px;
   z-index: 1;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -141,7 +140,11 @@
   .hover-content a {
     color: #fff;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 2.2rem;
+  }
+
+  .hover-content a button{
+    font-size: 2.2rem;
   }
 
   .hover-content .close-btn {
@@ -165,13 +168,11 @@
 
 @media (max-width: 411px) {
   .link-container {
-    margin-right: 20px; /* Reduce el margen derecho para que no quede tanto espacio */
+    margin: 0 auto;
     display: block; /* Cambia de grid a bloque para que ocupe todo el ancho */
   }
 
-  .hover-link {
-    font-size: 20px; /* Reducir el tamaño del texto en dispositivos pequeños */
-  }
+ 
 
   .hover-content {
     width: 90%; /* Ajustar el ancho para que ocupe la mayor parte de la pantalla */
@@ -179,18 +180,5 @@
     min-width: 0; /* Elimina el ancho mínimo */
     padding: 15px; /* Reducir el padding para más espacio */
     font-size: 18px; /* Ajusta el tamaño de la fuente */
-  }
-
-  .hover-content a {
-    font-size: 40px;
-    margin-bottom: 8px; /* Reducir el espacio entre los enlaces */
-  }
-
-  .hover-content.desktop {
-    display: none; /* Ocultar el contenido de escritorio para pantallas pequeñas */
-  }
-
-  .hover-content::before {
-    border-width: 0 8px 8px 8px; /* Hacer el triángulo más pequeño */
   }
 }

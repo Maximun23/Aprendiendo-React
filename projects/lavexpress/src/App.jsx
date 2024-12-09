@@ -9,8 +9,6 @@ import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
-import ServicePlans from "./Components/ServicePlans"; // Importa el componente
-
 import { useState } from "react";
 
 const routerConfig = {
@@ -86,6 +84,8 @@ function App() {
       </div>
     </>
   );
+
+
 
   return (
     <BrowserRouter {...routerConfig}>

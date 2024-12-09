@@ -34,18 +34,13 @@ const Header = () => {
   //Función para cambiar entre modo claro y oscuro
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    if(isDarkMode) {
+    if (isDarkMode) {
       document.body.classList.remove("dark");
       localStorage.setItem("darkMode", "false");
     } else {
       document.body.classList.add("dark");
-      localStorage.setItem("darkMode", true)
+      localStorage.setItem("darkMode", true);
     }
-  }
-
-  const handleToggleDarkMode = () => {
-   toggleDarkMode();
-   closeLinks();
   };
 
   // Función para mostrar/ocultar el menú
@@ -60,6 +55,11 @@ const Header = () => {
     }
   };
 
+  const closeAndDarKMode = () => {
+    toggleDarkMode();
+    closeLinks();
+  };
+
   return (
     <header>
       <div className="header-left">
@@ -72,7 +72,7 @@ const Header = () => {
           className={`hover-link ${isActive && isMobile ? "hidden" : ""}`}
           onClick={toggleLinks}
         >
-          <i className="fas fa-bars"></i>
+         <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"/></svg>
         </button>
 
         {/* Menú siempre visible al hacer clic, con fondo oscuro solo en móviles */}
@@ -84,7 +84,7 @@ const Header = () => {
           {/* Botón para cerrar el menú en móviles */}
           {isMobile && isActive && (
             <button className="close-btn" onClick={closeLinks}>
-              X
+              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12"/></svg>
             </button>
           )}
           <Link to="/" onClick={closeLinks}>
@@ -96,9 +96,14 @@ const Header = () => {
           <Link to="/menu" onClick={closeLinks}>
             Configuración
           </Link>
-          <button onClick={handleToggleDarkMode} className="mode-toggle-btn">
-            {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
-          </button>
+          <Link>
+            <button onClick={closeAndDarKMode} className="mode-toggle-btn">
+              {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
+            </button>
+          </Link>
+          <Link to="/cerrar-sesión" onClick={closeLinks}>
+            Cerrar sesión
+          </Link>
         </div>
       </div>
     </header>

@@ -1,0 +1,8 @@
+html,
+body {
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar paddings */
+  width: 100%; /* Ancho completo */
+  overflow-x: hidden; /* Evitar desbordamientos horizontales */
+}
+

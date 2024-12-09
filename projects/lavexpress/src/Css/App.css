@@ -11,7 +11,13 @@ body.dark {
   color: white;
 }
 
+
+
+
 /* Botón de cambio de modo */
+.mode-toggle-btn .mobile{
+  font-size: 30px;
+}
 .mode-toggle-btn {
     margin-right: 0 auto;
     color: #fff;
@@ -37,7 +43,7 @@ body.dark {
 }
 
 .dark .hover-content {
-  background-color: #222;
+  background-color: #010A13;
   color: white;
 }
 
@@ -52,7 +58,7 @@ body.dark {
 .dark .container-all {
   background-color: #000;
 }
-.dark .container-all h2 {
+.dark .container-all h2,h3 {
   color: #fff;
 }
 
@@ -65,10 +71,19 @@ body.dark {
   color: #000;
 }
 
+.dark .service-plans button:hover {
+  background-color: #F0E6D2;
+}
+
 .dark .locations li{
   color: #fff;
 }
 
 .dark footer{
   background-color: #0A1428;
+}
+
+.dark .not-found{
+  background-color: #010A13;
+  color: rgb(255, 87, 87);
 }

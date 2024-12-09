@@ -21,7 +21,7 @@
   color: #000;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -82,7 +82,33 @@
   margin-top: 10px;
   width: 90px;
   border-radius: 25px;
+  appearance: none; /* Para ocultar la flecha predeterminada */
+  -webkit-appearance: none; /* Compatibilidad con WebKit */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 25px;
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Alineación de la flecha a la derecha */
+  padding-right: 30px; /* Espacio extra a la derecha para que la flecha no tape el contenido */
+  transition: background-image 0.3s ease-in-out; /* Transición suave para cambiar la flecha */
+  background-size: 16px 16px; /* Tamaño pequeño de la flecha */
 }
+
+.service-plans select.open {
+  background-image: url("../assets/BxsUpArrow.svg"); /* Flecha hacia arriba cuando el select está abierto */
+}
+
+.service-plans select.closed {
+  background-image: url("../assets/BxsDownArrow.svg"); /* Flecha hacia abajo cuando el select está cerrado */
+}
+
+
+
+
+
+
 .service-plans button {
   display: block;
   margin-top: auto; /* Empuja el botón hacia la parte inferior */
@@ -94,6 +120,7 @@
   color: #fff;
   padding: 10px;
   cursor: pointer;
+  border: none;
 }
 
 .service-plans button:hover {
@@ -139,7 +166,7 @@
   flex: 1 1 calc(50% - 20px);
   min-width: 100px;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1rem;
   border: none;
   background-color: #0397ab;
   color: white;
@@ -150,16 +177,14 @@
 }
 
 .nav-buttons button:hover {
-  background-color: #005A82;
+  background-color: #005a82;
 }
 
 .nav-buttons button.active {
-  background-color: #0A323C; /* Color fijo cuando está activo */
+  background-color: #0a323c; /* Color fijo cuando está activo */
   color: white; /* Texto blanco en el botón activo */
   border-color: #0056b3;
 }
-
-
 
 @media (max-width: 768px) {
   /* Estilos generales para el contenedor principal */
@@ -189,7 +214,7 @@
     color: #000;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
     max-width: 300px;
@@ -242,7 +267,7 @@
   .content-container p {
     color: #000;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   /* Planes de servicio */
@@ -326,7 +351,7 @@
     max-width: 300px;
     min-width: 100px;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
     border: none;
     background-color: #70b1c7;
     color: white;
@@ -417,7 +442,6 @@
 
 @media (max-width: 411px) {
   .container-all {
-
     width: 100%; /* Cambia el ancho a 100% para adaptarse a la pantalla */
     margin: 0 10px; /* Añade un margen pequeño para evitar que el contenido toque los bordes */
     padding: 10px; /* Reduce el padding para dispositivos pequeños */
@@ -430,7 +454,7 @@
   }
 
   .tab-button {
-    font-size: 14px; /* Reduce el tamaño de la fuente para botones */
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente para botones */
     padding: 8px 15px; /* Reduce el padding para botones más compactos */
   }
 
@@ -447,34 +471,39 @@
   .content-container {
     padding: 10px; /* Reduce el padding en los contenedores de contenido */
     margin: 10px 0; /* Reduce el margen */
-
   }
 
   .content-container h2 {
-    font-size: 18px; /* Ajusta el tamaño del título */
+    font-size: 1.125rem; /* Ajusta el tamaño del título */
   }
 
   .content-container ul {
     padding: 0;
-    grid-template-columns: repeat(2, 1fr); /* Cambia de 3 columnas a 2 para pantallas pequeñas */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Cambia de 3 columnas a 2 para pantallas pequeñas */
   }
 
   .content-container ul li {
     text-align: center;
-    font-size: 14px; /* Reduce el tamaño de los elementos de la lista */
+    font-size: 0.875rem; /* Reduce el tamaño de los elementos de la lista */
   }
 
   .content-container p {
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    font-size: 0.875rem; /* Ajusta el tamaño de la fuente */
   }
 
   .service-plans {
-    grid-template-columns: repeat(2, 1fr); /* Cambia de 3 a 2 columnas en pantallas pequeñas */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Cambia de 3 a 2 columnas en pantallas pequeñas */
     gap: 10px; /* Reduce el espacio entre los elementos */
   }
 
   .service-plans select {
-    width: 70px; /* Reduce el tamaño del select */
+    width: 80px; /* Reduce el tamaño del select */
   }
 
   .service-plans button {
@@ -483,7 +512,7 @@
   }
 
   .service-plan {
-    width: 100%; /* Hace que los planes de servicio ocupen todo el ancho disponible */
+    width: 95%; /* Hace que los planes de servicio ocupen todo el ancho disponible */
     min-width: 0; /* Elimina el ancho mínimo */
     padding: 10px; /* Ajusta el padding */
   }
@@ -497,11 +526,11 @@
     width: 100%; /* Los botones ocupan el 100% del ancho */
     min-width: 0; /* Elimina el ancho mínimo */
     padding: 10px;
-    font-size: 14px; /* Reduce el tamaño de la fuente */
+    font-size: 0.875rem; /* Reduce el tamaño de la fuente */
   }
 
   .nav-button {
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    font-size: 0.875rem; /* Ajusta el tamaño de la fuente */
     padding: 8px 15px; /* Reduce el padding */
   }
 

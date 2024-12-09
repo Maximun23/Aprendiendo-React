@@ -5,7 +5,7 @@ header {
     background-color: #0397AB;
     justify-content: space-between;
     align-items: center;
-    font-size: 40px;
+    font-size: 2.5rem;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 10px;
@@ -43,7 +43,7 @@ header {
     color: #fff;
     cursor: pointer;
     transition: transform 0.3s ease; /* Animación suave */
-    font-size: 50px;
+    font-size: 3.125rem;
     max-height: 60px;
   }
   .nombre-empresa:hover {
@@ -66,7 +66,7 @@ header {
   header {
     display: flex;
     gap: 45px;
-    font-size: 30px; /* Reducir el tamaño de la fuente */
+    font-size: 1.875rem; /* Reducir el tamaño de la fuente */
     padding: 8px; /* Reducir el padding */
   }
 
@@ -89,7 +89,7 @@ header {
 
   .nombre-empresa {
     text-align: center;
-    font-size: 40px; /* Reducir el tamaño de la fuente */
+    font-size: 2.5rem; /* Reducir el tamaño de la fuente */
     max-height: 50px; /* Reducir el tamaño máximo */
   }
 
@@ -101,28 +101,41 @@ header {
 
 @media (max-width: 411px) {
   header {
-    text-align: center;
-    width: 100%;
-    font-size: 20px; /* Ajustar tamaño del texto */
-    padding: 8px; /* Reducir el padding */
+    flex-direction: column; /* Cambiar la disposición a columna */
+    font-size: 1.875rem; /* Reducir el tamaño general */
+    padding: 15px; /* Ajustar el padding */
+    text-align: center; /* Centrar el contenido */
   }
 
   .header-left {
-    gap: 10px; /* Reducir espacio entre elementos */
+    flex-direction: column; /* Alinear elementos en columna */
+    gap: 10px; /* Reducir el espacio entre elementos */
   }
 
   .logo-img {
-    max-height: 50px; /* Reducir tamaño del logo */
+    max-height: 60px; /* Reducir la altura máxima del logo */
+    transition: transform 0.3s ease; /* Mantener la animación */
+  }
+
+  nav {
+    flex-direction: column; /* Cambiar la disposición a columna */
+    gap: 10px; /* Reducir el espacio entre enlaces */
+    margin-right: 0; /* Eliminar margen derecho */
+    align-items: center; /* Centrar los enlaces */
   }
 
   .nombre-empresa {
-    font-size: 25px; /* Reducir tamaño del texto */
-    max-height: 45px; /* Ajustar altura máxima */
+    font-size: 2.5rem; /* Reducir el tamaño de la fuente */
+    max-height: none; /* Quitar restricción de altura */
+    margin: 10px 0; /* Añadir margen vertical */
   }
 
- 
+  .nombre-empresa:hover {
+    transform: scale(1.05); /* Reducir el efecto hover */
+  }
 
   a {
-    font-size: 14px; /* Reducir tamaño de los enlaces */
+    font-size: 1rem; /* Reducir el tamaño de los enlaces */
   }
 }
+  

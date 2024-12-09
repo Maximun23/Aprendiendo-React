@@ -20,40 +20,77 @@
 }
 
 .carousel button {
+  display: flex;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  font-size: 2em;
+  border-radius: 50%; /* Asegura que el borde sea completamente redondo */
+  font-size: 2em; /* Tamaño de la fuente */
   padding: 10px;
+  width: 50px; /* Ajusta el tamaño del botón */
+  height: 50px; /* Asegura que el alto sea igual al ancho */
   cursor: pointer;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
 }
 
+.carousel button:hover{
+  background-color: rgba(36, 35, 35, 0.5);
+}
+
+
 .prev {
-  left: 0;
+  left: 5px;
 }
 
 .next {
-  right: 0;
+  right: 5px;
 }
+
+
 
 @media (max-width: 411px) {
   .carousel {
-    top: 20px; /* Ajustar el margen superior */
-    max-width: 100%; /* Permitir que ocupe todo el ancho disponible */
-    padding: 0 10px; /* Añadir un poco de espacio interno */
+    width: 100%; /* Asegura que el carrusel ocupe el 100% del ancho */
+    max-width: none; /* Elimina la restricción del max-width */
+    margin: 0; /* Elimina el margen automático */
+    padding: 0 10px; /* Añade algo de espacio en los laterales */
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
   }
 
   .carousel-images img {
-    height: auto; /* Asegurar que las imágenes mantengan proporciones */
-    max-width: 100%; /* Escalar las imágenes adecuadamente */
+    max-width: 100%; /* La imagen ocupa todo el ancho disponible */
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
     font-size: 1.5em; /* Reducir el tamaño de los botones */
-    padding: 8px; /* Reducir el padding interno */
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px; /* Espacio a la izquierda */
+  }
+
+  .next {
+    right: 10px; /* Espacio a la derecha */
   }
 }

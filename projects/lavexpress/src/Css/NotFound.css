@@ -1,4 +1,4 @@
-/* src/Css/NotFound.css */
+
 .not-found {
     display: flex;
     text-align: center;
@@ -6,7 +6,7 @@
     align-items: center;
     padding: 50px;
     flex-direction: column;
-    background-color: #f8d7da;
+    background-color: #fff;
     color: #cf5d68;
     height: 60vh;
   }
