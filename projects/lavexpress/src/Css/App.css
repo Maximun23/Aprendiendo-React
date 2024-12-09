@@ -18,13 +18,13 @@ body.dark {
     background-color: transparent;
     border: 0;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 23px;
     transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 .mode-toggle-btn:hover {
   color: #F0E6D2;
-  font-size: 23px;
+  font-size: 26px;
 }
 
 /* Estilos adicionales para el modo oscuro en otras partes de la página */
