@@ -43,6 +43,11 @@ const Header = () => {
     }
   }
 
+  const handleToggleDarkMode = () => {
+   toggleDarkMode();
+   closeLinks();
+  };
+
   // Función para mostrar/ocultar el menú
   const toggleLinks = () => {
     setIsActive(!isActive);
@@ -91,7 +96,7 @@ const Header = () => {
           <Link to="/menu" onClick={closeLinks}>
             Configuración
           </Link>
-          <button onClick={toggleDarkMode} className="mode-toggle-btn">
+          <button onClick={handleToggleDarkMode} className="mode-toggle-btn">
             {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
           </button>
         </div>
