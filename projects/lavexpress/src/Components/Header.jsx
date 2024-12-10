@@ -101,7 +101,7 @@ const Header = () => {
               {isDarkMode ? "Modo Claro" : "Modo Oscuro"}
             </button>
           </Link>
-          <Link to="/cerrar-sesión" onClick={closeLinks}>
+          <Link to="/login" onClick={closeLinks}>
             Cerrar sesión
           </Link>
         </div>

@@ -4,6 +4,7 @@ import "./Css/carousel.css";
 import "./Css/ContentSection.css";
 import "./Css/NavLinks.css";
 import "./Css/Footer.css";
+import Login from "./Components/Login";
 import Header from "./Components/Header";
 import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
@@ -94,6 +95,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="login" element={<Login />} />
         </Routes>
         <Footer />
       </div>
