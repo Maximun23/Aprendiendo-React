@@ -187,6 +187,6 @@
     max-width: 300px; /* Limitar el ancho máximo */
     min-width: 0; /* Elimina el ancho mínimo */
     padding: 15px; /* Reducir el padding para más espacio */
-    font-size: 18px; /* Ajusta el tamaño de la fuente */
+    font-size: 1.125rem; /* Ajusta el tamaño de la fuente */
   }
 }
