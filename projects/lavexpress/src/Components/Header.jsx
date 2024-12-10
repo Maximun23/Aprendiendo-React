@@ -102,7 +102,7 @@ const Header = () => {
             </button>
           </Link>
           <Link to="/login" onClick={closeLinks}>
-            Cerrar sesión
+            Iniciar sesión
           </Link>
         </div>
       </div>
