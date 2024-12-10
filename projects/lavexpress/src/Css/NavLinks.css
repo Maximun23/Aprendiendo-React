@@ -100,8 +100,50 @@
 .hover-content a button {
   font-size: 1.25rem;
 }
-
 @media (max-width: 768px) {
+  .link-container {
+    display: flex;
+    justify-content: flex-end; /* Esto alinea los elementos a la derecha */
+    position: relative;
+    width: 100%;
+  }
+
+  .hamburger-btn {
+    font-size: 20px;
+    padding: 12px 20px;
+    color: red;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 7000;
+    position: absolute; /* Asegura que el botón esté a la derecha */
+  }
+
+  .hamburger-btn:hover {
+    background-color: #007fa3;
+  }
+
+  /* Contenedor con fondo negro que cubre toda la pantalla */
+  .hover-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .hover-content.active {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+  }
+
   .hover-content a {
     color: #fff;
     text-decoration: none;
@@ -111,16 +153,40 @@
   .hover-content a button{
     font-size: 2.2rem;
   }
+
+  .hover-content .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hover-content .close-btn:hover {
+    color: #007fa3;
+    border-radius: 0;
+  }
+
+  
 }
 
+
 @media (max-width: 411px) {
-  .hover-content a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 2rem;
+  .link-container {
+    margin: 0 auto;
+    display: block; /* Cambia de grid a bloque para que ocupe todo el ancho */
   }
 
-  .hover-content a button{
-    font-size: 2rem;
+ 
+
+  .hover-content {
+    width: 90%; /* Ajustar el ancho para que ocupe la mayor parte de la pantalla */
+    max-width: 300px; /* Limitar el ancho máximo */
+    min-width: 0; /* Elimina el ancho mínimo */
+    padding: 15px; /* Reducir el padding para más espacio */
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
   }
 }
