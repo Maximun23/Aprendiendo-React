@@ -10,6 +10,8 @@ import Carousel from "./Components/Carousel";
 import ContentSection from "./Components/ContentSection";
 import Footer from "./Components/Footer";
 import NotFound from "./Components/NotFound";
+import Pedidos from "./Components/Pedidos"
+import OrderForm from "./Components/OrderForm";
 import { useState } from "react";
 
 const routerConfig = {
@@ -94,8 +96,15 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/*" element={<NotFound />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/pedidos" element={<Pedidos />}></Route>
+          <Route path="/pedido/:serviceName" element={<OrderForm />} />
+          <Route path="/pedido/:title" element={<OrderForm />} />
+          <Route path="/pedido/Personalizado:customDays" element={<OrderForm />} />
+          <Route path="/pedido/Basico:customDayNormal" element={<OrderForm />} />
+          <Route path="/pedido/customDayMedium:customDayMedium" element={<OrderForm />} />
+          <Route path="/pedido/customDayPro:customDayPro" element={<OrderForm />} />
         </Routes>
         <Footer />
       </div>

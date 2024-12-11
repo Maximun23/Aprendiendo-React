@@ -1,72 +1,63 @@
-import React, { useState, useEffect } from "react";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-} from "firebase/auth";
-import { initializeApp } from "firebase/app";
+import { useState, useEffect } from "react";
+import { getAuth, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { auth, googleProvider } from "./firebase";
+import "../Css/App.css";
+import { isMobile } from "react-device-detect";
 
-// Configuración de Firebase (utiliza tus propias credenciales)
-const firebaseConfig = {
-  apiKey: "AIzaSyA3n_DA2v-7PEJ--6pEuNwahI6HjOKLfu0",
-  authDomain: "lavexpress-a84d0.firebaseapp.com",
-  projectId: "lavexpress-a84d0",
-  storageBucket: "lavexpress-a84d0.firebasestorage.app",
-  messagingSenderId: "542581373937",
-  appId: "1:542581373937:web:4230e8994c1a58a1d76250",
-  measurementId: "G-MHT51SPH2H",
-};
-
-// Inicializa la aplicación Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-const Login = () => {
+const Login = ({ onLogin, onLogout }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false); // Added loading state for better UX
 
   useEffect(() => {
-    // Detectar el estado de autenticación
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
+
     return () => unsubscribe();
   }, []);
 
-  // Función para manejar el inicio de sesión con Google
   const handleLogin = async () => {
-    const provider = new GoogleAuthProvider();
+    setLoading(true); // Set loading to true when starting login
     try {
-      await signInWithPopup(auth, provider);
+      if (isMobile) {
+        await signInWithRedirect(auth, googleProvider);
+      } else {
+        await signInWithPopup(auth, googleProvider);
+      }
     } catch (error) {
-      console.error(error);
+      console.error("Error during login:", error);
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
 
-  // Función para manejar el cierre de sesión
   const handleLogout = async () => {
+    setLoading(true); // Set loading to true when starting logout
     try {
       await signOut(auth);
+      onLogout();
     } catch (error) {
-      console.error(error);
+      console.error("Error during logout:", error);
+    } finally {
+      setLoading(false); // Reset loading state
     }
   };
-
-  if (user) {
-    return (
-      <div>
-        <h2>Bienvenido, {user.displayName}</h2>
-        <img src={user.photoURL} alt="User profile" />
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      </div>
-    );
-  }
 
   return (
     <div>
-      <h2>Inicia sesión con Google</h2>
-      <button onClick={handleLogin}>Iniciar sesión con Google</button>
+      {user ? (
+        <div>
+          <button onClick={handleLogout} disabled={loading}>
+            {loading ? "Cerrando sesión..." : "Cerrar Sesión"}
+          </button>
+        </div>
+      ) : (
+        <div>
+          <button onClick={handleLogin} disabled={loading}>
+            {loading ? "Iniciando sesión..." : "Iniciar Sesión"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
