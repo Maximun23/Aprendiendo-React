@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth, googleProvider } from './firebase';
-import Modal from './Modal'; // Importa el componente Modal
+import Modal from './Modal'; // Modal importado
 import '../Css/App.css';
 
 const Login = ({ onLogin, onLogout }) => {
@@ -10,34 +10,40 @@ const Login = ({ onLogin, onLogout }) => {
   const [errorMessage, setErrorMessage] = useState(null); // To handle error messages
   const [isModalOpen, setIsModalOpen] = useState(false); // Controlar el estado del modal
 
+  // Para escuchar el cambio de estado de autenticación
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
       if (currentUser) {
+        setUser(currentUser);
         onLogin(currentUser);
+      } else {
+        setUser(null);
       }
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); // Cleanup
   }, []);
 
+  // Función para manejar el login con popup
   const handleLogin = async () => {
     setLoading(true);
-    setErrorMessage(null); // Limpiar cualquier mensaje de error anterior
+    setErrorMessage(null); // Limpiar mensajes de error anteriores
+
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       setUser(user);
-      onLogin(user);
+      onLogin(user); // Callback para pasar el usuario autenticado
+      setIsModalOpen(false); // Cerrar el modal después del login exitoso
     } catch (error) {
       console.error('Error durante el login:', error);
       setErrorMessage('Hubo un problema al intentar iniciar sesión. Intenta de nuevo.');
     } finally {
       setLoading(false);
-      setIsModalOpen(false); // Cerrar el modal al finalizar el login
     }
   };
 
+  // Función para manejar el logout
   const handleLogout = async () => {
     setLoading(true);
     try {
