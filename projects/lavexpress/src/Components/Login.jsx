@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAuth, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signInWithPopup, signOut, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
 import { auth, googleProvider } from "./firebase";
 import "../Css/App.css";
 import { isMobile } from "react-device-detect";
@@ -9,15 +9,34 @@ const Login = ({ onLogin, onLogout }) => {
   const [loading, setLoading] = useState(false); // Added loading state for better UX
 
   useEffect(() => {
+    const handleRedirectResult = async () => {
+      try {
+        // Firebase v9+ usa este formato modular
+        const result = await getRedirectResult(auth);  // getRedirectResult ya no es un método de instancia, ahora toma el objeto auth como parámetro
+        if (result?.user) {
+          setUser(result.user);
+          onLogin(result.user);
+        }
+      } catch (error) {
+        console.error("Error durante la redirección:", error);
+      }
+    };
+
+    handleRedirectResult(); // Llama a la función para manejar la redirección
+
+    // También escucha los cambios de autenticación
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      if (currentUser) {
+        setUser(currentUser);
+        onLogin(currentUser);
+      }
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); // Cleanup en caso de que el componente se desmonte
   }, []);
 
   const handleLogin = async () => {
-    setLoading(true); // Set loading to true when starting login
+    setLoading(true);
     try {
       if (isMobile) {
         await signInWithRedirect(auth, googleProvider);
@@ -25,21 +44,21 @@ const Login = ({ onLogin, onLogout }) => {
         await signInWithPopup(auth, googleProvider);
       }
     } catch (error) {
-      console.error("Error during login:", error);
+      console.error("Error durante el login:", error);
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
   };
 
   const handleLogout = async () => {
-    setLoading(true); // Set loading to true when starting logout
+    setLoading(true);
     try {
       await signOut(auth);
       onLogout();
     } catch (error) {
-      console.error("Error during logout:", error);
+      console.error("Error durante logout:", error);
     } finally {
-      setLoading(false); // Reset loading state
+      setLoading(false);
     }
   };
 
