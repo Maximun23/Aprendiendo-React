@@ -6,13 +6,14 @@ import { isMobile } from "react-device-detect";
 
 const Login = ({ onLogin, onLogout }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false); // Added loading state for better UX
+  const [loading, setLoading] = useState(false);
 
+  // Función que maneja el estado de autenticación
   useEffect(() => {
     const handleRedirectResult = async () => {
       try {
-        // Firebase v9+ usa este formato modular
-        const result = await getRedirectResult(auth);  // getRedirectResult ya no es un método de instancia, ahora toma el objeto auth como parámetro
+        // Maneja la redirección después de un inicio de sesión
+        const result = await getRedirectResult(auth);
         if (result?.user) {
           setUser(result.user);
           onLogin(result.user);
@@ -22,9 +23,8 @@ const Login = ({ onLogin, onLogout }) => {
       }
     };
 
-    handleRedirectResult(); // Llama a la función para manejar la redirección
+    handleRedirectResult();
 
-    // También escucha los cambios de autenticación
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
@@ -35,12 +35,15 @@ const Login = ({ onLogin, onLogout }) => {
     return () => unsubscribe(); // Cleanup en caso de que el componente se desmonte
   }, []);
 
+  // Manejo del inicio de sesión
   const handleLogin = async () => {
     setLoading(true);
     try {
       if (isMobile) {
+        // Para dispositivos móviles, usamos la redirección
         await signInWithRedirect(auth, googleProvider);
       } else {
+        // Para escritorio, usamos el popup
         await signInWithPopup(auth, googleProvider);
       }
     } catch (error) {
@@ -50,6 +53,7 @@ const Login = ({ onLogin, onLogout }) => {
     }
   };
 
+  // Manejo del cierre de sesión
   const handleLogout = async () => {
     setLoading(true);
     try {
