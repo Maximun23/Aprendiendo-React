@@ -7,12 +7,11 @@ import { isMobile } from "react-device-detect";
 const Login = ({ onLogin, onLogout }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null); // To handle error messages
 
-  // Función que maneja el estado de autenticación
   useEffect(() => {
     const handleRedirectResult = async () => {
       try {
-        // Maneja la redirección después de un inicio de sesión
         const result = await getRedirectResult(auth);
         if (result?.user) {
           setUser(result.user);
@@ -20,6 +19,7 @@ const Login = ({ onLogin, onLogout }) => {
         }
       } catch (error) {
         console.error("Error durante la redirección:", error);
+        setErrorMessage("Error al intentar autenticarte. Intenta nuevamente.");
       }
     };
 
@@ -32,28 +32,28 @@ const Login = ({ onLogin, onLogout }) => {
       }
     });
 
-    return () => unsubscribe(); // Cleanup en caso de que el componente se desmonte
+    return () => unsubscribe();
   }, []);
 
-  // Manejo del inicio de sesión
   const handleLogin = async () => {
     setLoading(true);
+    setErrorMessage(null); // Clear any previous error messages
     try {
       if (isMobile) {
-        // Para dispositivos móviles, usamos la redirección
+        // Use redirection for mobile
         await signInWithRedirect(auth, googleProvider);
       } else {
-        // Para escritorio, usamos el popup
+        // Use popup for desktop
         await signInWithPopup(auth, googleProvider);
       }
     } catch (error) {
       console.error("Error durante el login:", error);
+      setErrorMessage("Hubo un problema al intentar iniciar sesión. Intenta de nuevo.");
     } finally {
       setLoading(false);
     }
   };
 
-  // Manejo del cierre de sesión
   const handleLogout = async () => {
     setLoading(true);
     try {
@@ -61,6 +61,7 @@ const Login = ({ onLogin, onLogout }) => {
       onLogout();
     } catch (error) {
       console.error("Error durante logout:", error);
+      setErrorMessage("Hubo un problema al intentar cerrar sesión.");
     } finally {
       setLoading(false);
     }
@@ -68,6 +69,7 @@ const Login = ({ onLogin, onLogout }) => {
 
   return (
     <div>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>} {/* Display error message if any */}
       {user ? (
         <div>
           <button onClick={handleLogout} disabled={loading}>
